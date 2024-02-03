@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎵🎵🎵</title>
+    <link rel="icon" href="resources/moonware-logo-removebg-preview2.png">
+
+    <!-- fading animation -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
+
+    <!-- icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+
+    <!-- prevent right click -->
+    <script>
+        document.addEventListener('contextmenu', function (e) {
+            e.preventDefault();
+        });
+    </script>
+
+
+
+
+
+
+    <!-- prevent user press f12 -->
+    <script>
+        document.onkeydown = function (e) {
+            if (e.key === 'F12' || e.keyCode === 123) {
+                e.preventDefault();
+            }
+        };
+    </script>
+
+
+
+
+
+
+    <!-- prevent user press ctrl + u -->
+    <script>
+        document.addEventListener('keydown', function (e) {
+            if (e.ctrlKey && (e.key === 'u' || e.key === 'U')) {
+                e.preventDefault();
+            }
+        });
+    </script>
+
+
+
+
+
+
+    <!-- prevent user press ctrl + s -->
+    <script>
+        document.addEventListener('keydown', function (e) {
+            if (e.ctrlKey && (e.key === 's' || e.key === 'S')) {
+                e.preventDefault();
+            }
+        });
+    </script>
+
+
+
+    <style>
+        .button {
+            font-size: 20px;
+            border: 5px;
+            padding: 0px 20px;
+            background-color: rgb(231, 231, 231);
+            border: rgb(255, 0, 128) solid 2px;
+            border-radius: 25px;
+            color: rgb(255, 0, 128);
+            font-weight: 600;
+            margin: 5px 0px;
+            transition: background-color 0.5s ease;
+            transition: color 0.5s ease;
+        }
+
+        .button:hover {
+            font-size: 20px;
+            border: 5px;
+            padding: 0px 20px;
+            background-color: rgb(255, 0, 128);
+            border: rgb(255, 0, 128) solid 2px;
+            border-radius: 25px;
+            color: rgb(231, 231, 231);
+            font-weight: 600;
+            margin: 5px 0px;
+        }
+
+
+        .motivation {
+            margin-top: 5px;
+            width: 100%;
+            border-radius: 10px;
+            border: rgb(255, 0, 128) 2px solid;
+            padding: 5px 10px;
+            font-size: 20px;
+            color: rgb(255, 0, 128);
+            font-weight: 600;
+            background-color: rgb(231, 231, 231);
+            transition: background-color 0.5s ease;
+            transition: color 0.5s ease;
+        }
+
+        .motivation:hover {
+            margin-top: 5px;
+            width: 100%;
+            border-radius: 10px;
+            border: rgb(255, 0, 128) 2px solid;
+            padding: 5px 10px;
+            font-size: 20px;
+            color: rgb(231, 231, 231);
+            font-weight: 600;
+            background-color: rgb(255, 0, 128);
+        }
+    </style>
+</head>
+
+<body style="position: relative;">
+
+
+    <audio id="button_hover">
+        <source src="audio/button-hover.mp3">
+        </source>
+    </audio>
+
+    <audio id="button_click">
+        <source src="audio/button_clicked.mp3">
+        </source>
+    </audio>
+
+
+
+    <!-- loading -->
+    <div id="loading"
+        style="width: 100%; height: 100vh; display: flex; justify-content: center; align-items: center; background-color: rgb(231, 231, 231); position: fixed; z-index: 5; transition: opacity 1s ease;">
+        <div>
+            <img style="width: 200px;" src="resources/cosplay fnf.gif" alt="">
+            <div style="text-align: center; padding-top: 20px; font-size: 30px; font-weight: 700;">
+                LOADING
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+    <!-- main part -->
+    <div>
+        <!-- head bar -->
+        <div
+            style="width: 100%; height: 50px; background-image: linear-gradient(to right, rgb(255, 0, 128) , rgb(29, 185, 94));; display: flex; justify-content: center; align-items: center; position: fixed; top: 0; z-index: 6;">
+            <div style="height: fit-content; ">
+                <table>
+                    <tr>
+                        <td><img style="height: 40px;" src="resources/moonware-logo-removebg-preview.png" alt=""></td>
+                        <td
+                            style="font-size: 40px; font-weight: 700; padding: 0px 40px; color: white; text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;">
+                            X</td>
+                        <td><img style="height: 35px;"
+                                src="resources/Amanotes_logo@2x.ed37484ecb917cb64c2586fbfdc6ab584918f1f7.png" alt="">
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <!-- content -->
+        <div
+            style="width: 100%; height: fit-content; padding: 60px 0px; display: flex; justify-content: center; overflow: hidden;">
+            <div
+                style="width: 800px; height: 100%; border: rgb(255, 0, 128) solid 5px; border-radius: 25px; background-color: rgb(231, 231, 231);">
+
+                <!-- page-1 -->
+                <div style="padding: 20px; width: 100%;">
+
+
+
+
+
+
+                    <div>
+                        <center>
+                            <img style="width: 300px;" src="resources/pop-cat-gif-7.gif" alt="">
+                        </center>
+                    </div>
+
+
+
+
+
+                    <!-- game play ========================================================================== -->
+                    <!-- ==================================================================================== -->
+                    <!-- ==================================================================================== -->
+                    <div style="font-weight: 800; font-size: 25px; color: rgb(255, 0, 128); margin-top: 10px;">
+                        1. Explain the core game mechanic of the game.
+                    </div>
+                    <div style="font-weight: 600; margin-top: 10px;">
+                        The core game mechanics of Duet Cats have gameplay similar to the famous legendary game of the
+                        past - Apple Catch. However, the game has been improved with interface changes, applying music
+                        dubbing and music beats. Here is my explanation of the core game mechanics:
+                    </div>
+                    <table style="margin-top: 10px;">
+                        <tr style="vertical-align: top;">
+                            <td style="width: 35%;">
+                                <div style="height: 100%;">
+                                    <img style="width: 100%; height: 100%; object-fit: contain;"
+                                        src="resources/unnamed (1).png" alt="">
+                                </div>
+                            </td>
+                            <td style="width: 65%; padding-left: 20px;">
+                                <ul>
+                                    <li>
+                                        The game requires the player to hold down and drag the cat so it can eat ice
+                                        cream falling from above (this gameplay is similar to fruit-catching games
+                                        popular in the early 2000s on websites). “gamevui.com”, “game24h.com”, “Y8.com”,
+                                        etc). The player needs to control two cats in parallel so they can catch the ice
+                                        cream falling from above. The ice creams need to be caught perfectly to create
+                                        musical notes through cats's squeaks.
+                                    </li>
+                                    <li style="margin-top: 2px;">
+                                        In the game players can choose their favorite song sung by adorable cats. The
+                                        game offers a variety of tracks that are unlocked through watching ads or
+                                        winning a level. Players can choose their favorite songs and try to get the most
+                                        stars (3 stars). In addition, the game will also provide coins after each round.
+                                        With the hold and drag mechanism, players can collect those coins.
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </table>
+                    <ul>
+                        <li style="margin-top: 2px;">
+                            With the collected coins, players can use them to exchange skins for cats. In
+                            addition, gold coins can also be used to replace dropped food skins and buy
+                            items in the cat's house. Some food and cat skins can be obtained through
+                            watching ads.
+                        </li>
+                    </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    <!-- music use ========================================================================== -->
+                    <!-- ==================================================================================== -->
+                    <!-- ==================================================================================== -->
+                    <div style="font-weight: 800; font-size: 25px; color: rgb(255, 0, 128); margin-top: 10px;">
+                        2. Explain and compare how music is integrated with the gameplay of the game.
+                    </div>
+
+                    <div style="font-weight: 600; margin-top: 10px;">
+                        The way of integrating music into the gameplay of the game Duet Cats is similar to the previous
+                        3 games in terms of mechanics by still paying attention to the lyrics and rhythm. Below is my
+                        take on Friday Night Funkin''s approach and approach to integrating music into the game's
+                        gameplay:
+                    </div>
+                    <ul>
+                        <li>
+                            Duet Cats has methodically selected music and paid attention to users' tastes
+                            and "remixed" them through the cats' melodies. These tracks are selected because
+                            they bring familiarity or have attractive, fun melodies for players. However,
+                            Duet Cats has a relatively low amount of “meower” music. To compensate, the
+                            amount of music in the “instrumental” section is quite large.
+                        </li>
+                    </ul>
+                    <table style="margin-top: 10px;">
+                        <tr style="vertical-align: top;">
+                            <td style="width: 20%;">
+                                <div style="height: 100%;">
+                                    <img style="width: 100%; height: 100%; object-fit: contain; border-radius: 25px; border: #38C68B 5px solid;"
+                                        src="resources/duet-cats-36695-9.jpg" alt="">
+                                </div>
+                            </td>
+                            <td style="width: 80%; padding-left: 20px;" data-aos="fade-left">
+                                <ul>
+                                    <li style="margin-top: 2px;">
+                                        During the game, the player needs to hold down and move 2 cats to catch food
+                                        falling from above. Besides catching food, players also need to pay attention to
+                                        catching stars dropped with food. If the player cannot catch the food, the
+                                        player will lose 1 life (usually there will only be 1 life, to get 2 more lives
+                                        the user will have to watch ads). Players can choose to watch the ad to continue
+                                        or skip it and accept defeat.
+                                    </li>
+                                    <li style="margin-top: 2px;">
+                                        Duet Cats drop food from above to the beat of the music. The dropping of food
+                                        from above is synchronized with the rhythm of the music. Players need to hold
+                                        and move the cats to be able to eat all the food and help the cats meow in time
+                                        with the rhythm.
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    <!-- motivation ========================================================================= -->
+                    <!-- ==================================================================================== -->
+                    <!-- ==================================================================================== -->
+                    <div style="font-weight: 800; font-size: 25px; color: rgb(255, 0, 128); margin-top: 10px;">
+                        3. What is the motivation that keeps players playing & coming back in these games? Explain
+                        how the game creates that motivation with its systems & design.
+                    </div>
+
+
+                    <div style="font-weight: 600; margin-top: 10px;">
+                        Duet Cats was the last game I played. The gameplay of holding and moving cats instead of
+                        pressing and holding like previous games showed me clearly the difference and diversity in the
+                        game presentation of a music game. Accompanying the use of the familiar meme image of the pop
+                        cat made a big impression on me. The following is the motivation that the game creates for
+                        players based on my personal opinion:
+                    </div>
+
+
+
+                    <div id="motivation1">
+                        <div onclick="open_motiovation_1()" class="motivation">
+                            <i class="fa fa-arrow-circle-o-right" aria-hidden="true"></i> First motivation (click
+                            me)
+                        </div>
+                    </div>
+                    <div id="openmotivation1"></div>
+
+
+
+                    <div id="motivation2">
+                        <div onclick="open_motiovation_2()" class="motivation">
+                            <i class="fa fa-arrow-circle-o-right" aria-hidden="true"></i> Second motivation (click
+                            me)
+                        </div>
+                    </div>
+                    <div id="openmotivation2"></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    <!-- aesthetic ========================================================================== -->
+                    <!-- ==================================================================================== -->
+                    <!-- ==================================================================================== -->
+                    <div style="font-weight: 800; font-size: 25px; color: rgb(255, 0, 128); margin-top: 10px;">
+                        4. Describe the style and aesthetic of the game. Explain how the game achieves that aesthetic
+                        through its design, art, and audio.
+                    </div>
+                    <div style="font-weight: 600; margin-top: 10px;">
+                        As for style, the gameplay interface of Duet Cats chooses its own path with a cute and simple
+                        interface. Duet Cats' user interface is designed to be simple, cute, and somewhat retro.
+                        Regarding aesthetics, the colors used in Duet Cats are light and bright, helping to create a
+                        cheerful and pleasant atmosphere. The details of cats and objects in the game are expressed
+                        simply but clearly, creating images that are easy to see and attract the player's attention.
+                    </div>
+                    <div style="font-weight: 600; margin-top: 10px;">
+                        The music used in the game is remixed in a lighter and more mischievous way than the original
+                        version. The lyrics in the game are replaced with adorable cat sounds, creating a more playful
+                        and less serious atmosphere than the lyrics in the original version. Changing the melody and
+                        lyrics in the game along with the lovely interface design helps further affirm the game's role
+                        in helping players entertain rather than stress about scores and challenges in the game.
+                    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    <!-- improve ============================================================================ -->
+                    <!-- ==================================================================================== -->
+                    <!-- ==================================================================================== -->
+                    <div style="font-weight: 800; font-size: 25px; color: rgb(255, 0, 128); margin-top: 10px;">
+                        5. Propose briefly 1 critical point you want to improve.
+                    </div>
+                    <div style="margin-top: 10px;">
+                        <Strong>Briefly:</Strong> the only improvement in the game is probably the amount of music in
+                        the game.
+                    </div>
+                    <div style="margin-top: 10px;">
+                        <Strong>Details:</Strong> Because this is a game that mainly focuses on entertainment and
+                        relaxation, I will not mention antagonism like in previous times. Adding antagonism can even
+                        destroy the inherently beautiful nature of the game. However, considering the number of songs
+                        with lyrics in the game should probably be promoted. I understand that creating a lovely version
+                        of a song is difficult. In particular, there must be careful selection and neutralization of
+                        viral songs. Viral songs will often have a special melody such as strong, sad, etc. Transforming
+                        those tunes into something as innocent, mischievous, and fun as Duet Cats would be a big
+                        challenge. What brings players to a music game is harmonizing their emotions with the melody of
+                        that song. And it would be even better if they could immerse themselves in their favorite song.
+                        Creating melodies and adding songs can present a challenging wall, but once that wall is broken,
+                        Duet Cats has the potential to shine even brighter than it is currently.
+                    </div>
+
+
+
+
+                    <!-- next button ======================================================================== -->
+                    <!-- ==================================================================================== -->
+                    <!-- ==================================================================================== -->
+                    <div style="width: 100%; display: flex; justify-content: right; margin-top: 10px;">
+                        <button id="nextgame" class="button">
+                            <i class="fa fa-trophy" aria-hidden="true"></i> Game compete <i class="fa fa-trophy"
+                                aria-hidden="true"></i>
+                        </button>
+                    </div>
+
+
+                </div>
+
+            </div>
+        </div>
+
+        <!-- bground -->
+        <div style="position: fixed; top: 0; left: 0; width: 100%; height: 100vh; z-index: -1;">
+            <div style="position: relative; width: 100%; height: 100%;">
+                <div style="background-color: rgba(0, 0, 0, 0.644); width: 100%; height: 100%; position: absolute;">
+                </div>
+                <img style="width: 100%; height: 100%; object-fit: cover;"
+                    src="resources/56433c06638810cd47b086c15b7dc020.gif" alt="">
+            </div>
+        </div>
+
+    </div>
+
+
+
+    <script>
+        function open_motiovation_1() {
+            var motivation1 = document.getElementById("motivation1");
+            var openmotivation1 = document.getElementById("openmotivation1");
+
+            motivation1.innerHTML = `<div style="width: 100%; border-radius: 10px; border: rgb(255, 0, 128) 2px solid; padding: 5px 10px; font-size: 20px; color: rgb(231, 231, 231); font-weight: 600; background-color: rgb(255, 0, 128);">
+                                        <i class="fa fa-arrow-circle-o-down" aria-hidden="true"></i> First motivation (click me)
+                                    </div>`;
+
+            openmotivation1.innerHTML = `<div style="width: 100%; padding: 0px 10px 10px 10px;" data-aos="fade-down">
+                Unlike the previous titles mentioned, Duet Cat offers a gentle playing experience instead of creating increasing challenges to challenge players. The gentle style of the game along with the cuteness of the cats can show that the game's target audience is not "try hard" gamers. Creating a gentle playing environment can be of great interest to gamers who prioritize entertainment over competition. The evidence that can be mentioned is the resounding success of gentle relaxation games such as Sky Garden, Animal Crossing, etc.
+                    </div>`;
+        }
+
+
+        function open_motiovation_2() {
+            var motivation2 = document.getElementById("motivation2");
+            var openmotivation2 = document.getElementById("openmotivation2");
+
+            motivation2.innerHTML = `<div style="width: 100%; border-radius: 10px; border: rgb(255, 0, 128) 2px solid; padding: 5px 10px; font-size: 20px; color: rgb(231, 231, 231); font-weight: 600; background-color: rgb(255, 0, 128);">
+                                        <i class="fa fa-arrow-circle-o-down" aria-hidden="true"></i> Second motivation (click me)
+                                    </div>`;
+
+            openmotivation2.innerHTML = `<div style="width: 100%; padding: 0px 10px 10px 10px;" data-aos="fade-down">
+                Duet Cats approaches inspiring players by allowing them to take time and look back at what they have done in the game. Unlike the previous 3 games, there is no player ranking, and does not mention too much about scores. Instead, like the approach of relaxing games, Duet Cats wants players to reflect on what they have done through the playing process. Players can decorate the cat's house with household items through coins earned during the game. This approach is similar to “Minecraft” gamers building and viewing their build, “Play Together” gamers earning in-game currency and decorating their homes, or the closest example to Duet Cats in this regard is “Neko Atsume”.
+                    </div>`;
+        }
+
+
+
+
+    </script>
+
+
+
+
+    <script>
+        var button_hover_audio = document.getElementById("button_hover");
+        var button_click_audio = document.getElementById("button_click");
+        // button_hover_audio.play();
+        const button = document.querySelectorAll('.button');
+        button.forEach((button) => {
+            button.addEventListener('mouseover', () => {
+                button_hover_audio.play();
+            })
+        });
+
+        document.getElementById("nextgame").onclick = function () {
+            button_click_audio.play();
+            fadeIn();
+            setTimeout(function () {
+                // Replace 'newPage.html' with the URL of the page you want to redirect to
+                window.location.href = 'game-compete.html';
+            }, 1000);
+        }
+
+        function fadeIn() {
+            loading.style.display = "flex";
+            loading.style.opacity = 1;
+        }
+
+    </script>
+
+
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // Get the element to fade
+            var loading = document.getElementById("loading");
+
+            // Set the initial opacity
+            loading.style.opacity = 1;
+
+            // Function to fade the element to transparent
+            function fadeOutAndHide() {
+                loading.style.opacity = 0;
+
+                // Set display to "none" after the fading animation is complete
+                setTimeout(function () {
+                    loading.style.display = "none";
+                }, 1000); // 1000 milliseconds is the duration of the fade animation
+            }
+
+
+
+
+            // Call the fadeOutAndHide function after a delay (e.g., 3 seconds)
+            setTimeout(fadeOutAndHide, 3000);
+        });
+    </script>
+
+
+    <!-- animation -->
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+
+
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

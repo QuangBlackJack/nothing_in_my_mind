@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎵🎵🎵</title>
+    <link rel="icon" href="resources/moonware-logo-removebg-preview2.png">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <!-- prevent right click -->
+    <script>
+        document.addEventListener('contextmenu', function (e) {
+            e.preventDefault();
+        });
+    </script>
+
+
+
+
+
+
+    <!-- prevent user press f12 -->
+    <script>
+        document.onkeydown = function (e) {
+            if (e.key === 'F12' || e.keyCode === 123) {
+                e.preventDefault();
+            }
+        };
+    </script>
+
+
+
+
+
+
+    <!-- prevent user press ctrl + u -->
+    <script>
+        document.addEventListener('keydown', function (e) {
+            if (e.ctrlKey && (e.key === 'u' || e.key === 'U')) {
+                e.preventDefault();
+            }
+        });
+    </script>
+
+
+
+
+
+
+    <!-- prevent user press ctrl + s -->
+    <script>
+        document.addEventListener('keydown', function (e) {
+            if (e.ctrlKey && (e.key === 's' || e.key === 'S')) {
+                e.preventDefault();
+            }
+        });
+    </script>
+
+    <style>
+        .button {
+            font-size: 20px;
+            border: 5px;
+            background-color: rgb(231, 231, 231);
+            border: rgb(255, 0, 128) solid 2px;
+            border-radius: 25px;
+            width: 300px;
+            color: rgb(255, 0, 128);
+            font-weight: 600;
+            margin: 5px 0px;
+            transition: background-color 0.5s ease;
+            transition: color 0.5s ease;
+        }
+
+        .button:hover {
+            font-size: 20px;
+            border: 5px;
+            background-color: rgb(255, 0, 128);
+            border: rgb(255, 0, 128) solid 2px;
+            border-radius: 25px;
+            width: 300px;
+            color: rgb(231, 231, 231);
+            font-weight: 600;
+            margin: 5px 0px;
+        }
+
+
+        #xin_loi_anh_chiu_khong_noi {
+            width: 100%;
+            height: 100vh;
+            z-index: 4;
+            background-color: rgb(231, 231, 231);
+            display: none;
+            justify-content: center;
+            align-items: center;
+        }
+
+        @media screen and (max-width: 800px) {
+            #xin_loi_anh_chiu_khong_noi {
+                width: 100%;
+                height: 100vh;
+                padding: 10px;
+                z-index: 4;
+                background-color: rgb(231, 231, 231);
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+
+<body style="position: relative; overflow: hidden;">
+
+
+    <audio id="button_hover">
+        <source src="audio/button-hover.mp3">
+        </source>
+    </audio>
+
+    <audio id="button_click">
+        <source src="audio/button_clicked.mp3">
+        </source>
+    </audio>
+
+
+
+    <!-- loading -->
+    <div id="loading"
+        style="width: 100%; height: 100vh; display: flex; justify-content: center; align-items: center; background-color: rgb(231, 231, 231); position: fixed; z-index: 5; transition: opacity 1s ease;">
+        <div>
+            <img style="width: 200px;" src="resources/cosplay fnf.gif" alt="">
+            <div style="text-align: center; padding-top: 20px; font-size: 30px; font-weight: 700;">
+                LOADING
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- sorry no suitable -->
+    <div id="xin_loi_anh_chiu_khong_noi">
+        <div>
+            <center>
+                <img style="width: 200px;" src="resources/source.gif" alt="">
+            </center>
+            <div style="text-align: center; padding-top: 20px; font-size: 30px; font-weight: 700;">
+                I'm very sorry to inform you that your screen size is not suitable for this feature
+            </div>
+            <div style="text-align: center; padding-top: 18px; font-size: 20px; font-weight: 400;">
+                Please use a device that has a screen size wider than 800px, thank you
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- main part -->
+    <div>
+        <!-- head bar -->
+        <div
+            style="width: 100%; height: 50px; background-image: linear-gradient(to right, rgb(255, 0, 128) , rgb(29, 185, 94));; display: flex; justify-content: center; align-items: center; position: fixed; top: 0; z-index: 6;">
+            <div style="height: fit-content; ">
+                <table>
+                    <tr>
+                        <td><img style="height: 40px;" src="resources/moonware-logo-removebg-preview.png" alt=""></td>
+                        <td
+                            style="font-size: 40px; font-weight: 700; padding: 0px 40px; color: white; text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;">
+                            X</td>
+                        <td><img style="height: 35px;"
+                                src="resources/Amanotes_logo@2x.ed37484ecb917cb64c2586fbfdc6ab584918f1f7.png" alt="">
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <!-- content -->
+        <div style="width: 100%; height: 100vh; display: flex; justify-content: center; align-items: center;">
+            <div
+                style="width: 800px; height: 480px; border: rgb(255, 0, 128) solid 5px; border-radius: 25px; background-color: rgb(231, 231, 231);">
+
+                <!-- page-1 -->
+                <div class="row" style="padding: 20px; width: 100%; height: 100%; margin: 0;">
+                    <div class="col-md-6" style="width: 100%; height: 100%; object-fit: contain;">
+                        <img id="emotion" style="width: 100%; height: 100%; object-fit: contain;"
+                            src="resources/emotion0.png" alt="">
+                    </div>
+                    <div class="col-md-6" style="display: flex; justify-content: center; align-items: center;">
+                        <div>
+                            <button id="game1" class="button">Beatstar</button>
+                            <button id="game2" class="button">Magic
+                                Tiles 3</button>
+                            <button id="game3" class="button">Friday
+                                Night Funkin'</button>
+                            <button id="game4" class="button">Duet
+                                Cats</button>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- bground -->
+        <div style="position: fixed; top: 0; left: 0; width: 100%; height: 100vh; z-index: -1;">
+            <div style="position: relative; width: 100%; height: 100%;">
+                <div style="background-color: rgba(0, 0, 0, 0.644); width: 100%; height: 100%; position: absolute;">
+                </div>
+                <img style="width: 100%; height: 100%; object-fit: cover;"
+                    src="resources/56433c06638810cd47b086c15b7dc020.gif" alt="">
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <script>
+        var button_hover_audio = document.getElementById("button_hover");
+        var button_click_audio = document.getElementById("button_click");
+        // button_hover_audio.play();
+        const button = document.querySelectorAll('.button');
+        button.forEach((button) => {
+            button.addEventListener('mouseover', () => {
+                button_hover_audio.play();
+            })
+        });
+
+
+        // featuredContainer[i].addEventListener('mouseleave', () => {
+        //     featuredGame[i].classList.add("slideDownPopUpAnimation");
+        //     featuredLayer[i].classList.add("endSlideDownPopUpAnimation");
+        //     textLayer[i].classList.add("endSlideTextLayer");
+
+        //     featuredGame[i].classList.remove("endSlideDownPopUpAnimation");
+        //     featuredLayer[i].classList.remove("slideDownPopUpAnimation");
+        //     textLayer[i].classList.remove("slideTextLayer");
+        // });
+
+
+        var emotion = document.getElementById("emotion");
+
+
+        document.getElementById("game1").addEventListener('mouseover', () => {
+            emotion.src = "resources/emotion1.png"
+        })
+        document.getElementById("game2").addEventListener('mouseover', () => {
+            emotion.src = "resources/emotion2.png"
+        })
+        document.getElementById("game3").addEventListener('mouseover', () => {
+            emotion.src = "resources/emotion3.png"
+        })
+        document.getElementById("game4").addEventListener('mouseover', () => {
+            emotion.src = "resources/emotion4.png"
+        })
+
+
+        document.getElementById("game1").addEventListener('mouseleave', () => {
+            emotion.src = "resources/emotion0.png"
+        })
+        document.getElementById("game2").addEventListener('mouseleave', () => {
+            emotion.src = "resources/emotion0.png"
+        })
+        document.getElementById("game3").addEventListener('mouseleave', () => {
+            emotion.src = "resources/emotion0.png"
+        })
+        document.getElementById("game4").addEventListener('mouseleave', () => {
+            emotion.src = "resources/emotion0.png"
+        })
+
+
+
+
+        document.getElementById("game1").onclick = function () {
+            button_click_audio.play();
+            fadeIn();
+            setTimeout(function () {
+                // Replace 'newPage.html' with the URL of the page you want to redirect to
+                window.location.href = 'beatstar.html';
+            }, 1000);
+        }
+        document.getElementById("game2").onclick = function () {
+            button_click_audio.play();
+            setTimeout(function () {
+                alert("Uhm… You know what? 👽 I know this is stupid when give you options but don’t let you choose. But I’m running out of time. This is the best I can do in this situation. Please click the “Beatstar” 🙏.");
+            }, 500);
+        }
+        document.getElementById("game3").onclick = function () {
+            button_click_audio.play();
+            setTimeout(function () {
+                alert("Uhm… You know what? 👽 I know this is stupid when give you options but don’t let you choose. But I’m running out of time. This is the best I can do in this situation. Please click the “Beatstar” 🙏.");
+            }, 500);
+        }
+        document.getElementById("game4").onclick = function () {
+            button_click_audio.play();
+            setTimeout(function () {
+                alert("Uhm… You know what? 👽 I know this is stupid when give you options but don’t let you choose. But I’m running out of time. This is the best I can do in this situation. Please click the “Beatstar” 🙏.");
+            }, 500);
+        }
+
+
+
+
+
+
+
+        function fadeIn() {
+            loading.style.display = "flex";
+            loading.style.opacity = 1;
+        }
+
+    </script>
+
+
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // Get the element to fade
+            var loading = document.getElementById("loading");
+
+            // Set the initial opacity
+            loading.style.opacity = 1;
+
+            // Function to fade the element to transparent
+            function fadeOutAndHide() {
+                loading.style.opacity = 0;
+
+                // Set display to "none" after the fading animation is complete
+                setTimeout(function () {
+                    loading.style.display = "none";
+                }, 1000); // 1000 milliseconds is the duration of the fade animation
+            }
+
+
+
+
+            // Call the fadeOutAndHide function after a delay (e.g., 3 seconds)
+            setTimeout(fadeOutAndHide, 3000);
+        });
+    </script>
+
+
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

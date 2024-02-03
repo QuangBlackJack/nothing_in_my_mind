@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎵🎵🎵</title>
+    <link rel="icon" href="resources/moonware-logo-removebg-preview2.png">
+
+    <!-- fading animation -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
+
+    <!-- icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+
+    <!-- prevent right click -->
+    <script>
+        document.addEventListener('contextmenu', function (e) {
+            e.preventDefault();
+        });
+    </script>
+
+
+
+
+
+
+    <!-- prevent user press f12 -->
+    <script>
+        document.onkeydown = function (e) {
+            if (e.key === 'F12' || e.keyCode === 123) {
+                e.preventDefault();
+            }
+        };
+    </script>
+
+
+
+
+
+
+    <!-- prevent user press ctrl + u -->
+    <script>
+        document.addEventListener('keydown', function (e) {
+            if (e.ctrlKey && (e.key === 'u' || e.key === 'U')) {
+                e.preventDefault();
+            }
+        });
+    </script>
+
+
+
+
+
+
+    <!-- prevent user press ctrl + s -->
+    <script>
+        document.addEventListener('keydown', function (e) {
+            if (e.ctrlKey && (e.key === 's' || e.key === 'S')) {
+                e.preventDefault();
+            }
+        });
+    </script>
+
+
+
+    <style>
+        .button {
+            font-size: 20px;
+            border: 5px;
+            padding: 0px 20px;
+            background-color: rgb(231, 231, 231);
+            border: rgb(255, 0, 128) solid 2px;
+            border-radius: 25px;
+            color: rgb(255, 0, 128);
+            font-weight: 600;
+            margin: 5px 0px;
+            transition: background-color 0.5s ease;
+            transition: color 0.5s ease;
+        }
+
+        .button:hover {
+            font-size: 20px;
+            border: 5px;
+            padding: 0px 20px;
+            background-color: rgb(255, 0, 128);
+            border: rgb(255, 0, 128) solid 2px;
+            border-radius: 25px;
+            color: rgb(231, 231, 231);
+            font-weight: 600;
+            margin: 5px 0px;
+        }
+
+
+        .motivation {
+            margin-top: 5px;
+            width: 100%;
+            border-radius: 10px;
+            border: rgb(255, 0, 128) 2px solid;
+            padding: 5px 10px;
+            font-size: 20px;
+            color: rgb(255, 0, 128);
+            font-weight: 600;
+            background-color: rgb(231, 231, 231);
+            transition: background-color 0.5s ease;
+            transition: color 0.5s ease;
+        }
+
+        .motivation:hover {
+            margin-top: 5px;
+            width: 100%;
+            border-radius: 10px;
+            border: rgb(255, 0, 128) 2px solid;
+            padding: 5px 10px;
+            font-size: 20px;
+            color: rgb(231, 231, 231);
+            font-weight: 600;
+            background-color: rgb(255, 0, 128);
+        }
+    </style>
+</head>
+
+<body style="position: relative;">
+
+
+    <audio id="button_hover">
+        <source src="audio/button-hover.mp3">
+        </source>
+    </audio>
+
+    <audio id="button_click">
+        <source src="audio/button_clicked.mp3">
+        </source>
+    </audio>
+
+
+
+    <!-- loading -->
+    <div id="loading"
+        style="width: 100%; height: 100vh; display: flex; justify-content: center; align-items: center; background-color: rgb(231, 231, 231); position: fixed; z-index: 5; transition: opacity 1s ease;">
+        <div>
+            <img style="width: 200px;" src="resources/cosplay fnf.gif" alt="">
+            <div style="text-align: center; padding-top: 20px; font-size: 30px; font-weight: 700;">
+                LOADING
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+    <!-- main part -->
+    <div>
+        <!-- head bar -->
+        <div
+            style="width: 100%; height: 50px; background-image: linear-gradient(to right, rgb(255, 0, 128) , rgb(29, 185, 94));; display: flex; justify-content: center; align-items: center; position: fixed; top: 0; z-index: 6;">
+            <div style="height: fit-content; ">
+                <table>
+                    <tr>
+                        <td><img style="height: 40px;" src="resources/moonware-logo-removebg-preview.png" alt=""></td>
+                        <td
+                            style="font-size: 40px; font-weight: 700; padding: 0px 40px; color: white; text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;">
+                            X</td>
+                        <td><img style="height: 35px;"
+                                src="resources/Amanotes_logo@2x.ed37484ecb917cb64c2586fbfdc6ab584918f1f7.png" alt="">
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <!-- content -->
+        <div
+            style="width: 100%; height: fit-content; padding: 60px 0px; display: flex; justify-content: center; overflow: hidden;">
+            <div
+                style="width: 800px; height: 100%; border: rgb(255, 0, 128) solid 5px; border-radius: 25px; background-color: rgb(231, 231, 231);">
+
+                <!-- page-1 -->
+                <div style="padding: 20px; width: 100%;">
+
+
+
+
+
+
+                    <div>
+                        <center>
+                            <img style="width: 300px;" src="resources/fighting-love.gif" alt="">
+                        </center>
+                    </div>
+
+
+
+
+
+                    <!-- game play ========================================================================== -->
+                    <!-- ==================================================================================== -->
+                    <!-- ==================================================================================== -->
+                    <div style="font-weight: 800; font-size: 25px; color: rgb(255, 0, 128); margin-top: 10px;">
+                        6. Pick a game, make a brief proposal for a new game to compete directly with the game you
+                        picked.
+                    </div>
+                    <div style="font-weight: 600; margin-top: 10px;">
+                        Initially, my idea was to use Piano Tiles 2 to fight Magic Tiles when both have nearly the same
+                        playing mechanism and come from 2 different publishers. This will create a more intuitive view
+                        when making comparisons with other businesses. However, the request includes the appearance of
+                        the adj "new". In my personal opinion, with the continuous development of the gaming industry,
+                        the game Piano Tiles 2 is not suitable for this case. I decided to choose Tiles Hop against Duet
+                        Cats, knowing both were Amanotes products, but this could be a good battle. Tiles Hop and Duet
+                        Cats are both games in the music and rhythm game genre, but there are some differences between
+                        them. Below is the comparison I made between the two games:
+                    </div>
+                    <table style="margin-top: 10px; width: 100%;">
+                        <tr style="vertical-align: middle; width: 100%;">
+                            <td style="width: 33%; border: 1px solid black; padding: 5px;">
+                                <center>
+                                    <img style="width: 100px; height: 100px; border-radius: 25px; border: #38C68B 5px solid;"
+                                        src="resources/Icon-Store-1024-670x670.png" alt="">
+                                </center>
+                            </td>
+                            <td style="width: 33%; font-size: 30px; font-weight: 700; border: 1px solid black;">
+                                <center>
+                                    Field
+                                </center>
+
+                            </td>
+                            <td style="width: 33%; border: 1px solid black; padding: 5px;">
+                                <center>
+                                    <img style="width: 100px; height: 100px; border-radius: 25px; border: #38C68B 5px solid;"
+                                        src="resources/unnamed (2).png" alt="">
+                                </center>
+
+                            </td>
+                        </tr>
+
+                        <tr style="vertical-align: middle; width: 100%; border: 1px solid black;">
+                            <td style="width: 33%; padding: 5px;">
+                                The player controls the ball to jump over the tiles to the beat of the music. The
+                                gameplay is simple and addictive, focusing on the synchronization between the
+                                player's actions and the beat of the music.
+                            </td>
+                            <td
+                                style="width: 33%; font-size: 25px; font-weight: 600; color: #6f6f6f; border: 1px solid black;">
+                                <center>
+                                    Play style
+                                </center>
+
+                            </td>
+                            <td style="width: 33%; border: 1px solid black; padding: 5px;">
+                                The player controls two cats to catch food falling from above to create musical
+                                beats. Duet's gameplay is also simple, adorable, and synchronized with the music.
+
+                            </td>
+                        </tr>
+
+                        <tr style="vertical-align: middle; width: 100%; border: 1px solid black;">
+                            <td style="width: 33%; padding: 5px;">
+                                Provides diverse music from many different genres, but mainly trending and influential
+                                young music.
+                            </td>
+                            <td
+                                style="width: 33%; font-size: 25px; font-weight: 600; color: #6f6f6f; border: 1px solid black;">
+                                <center>
+                                    Music
+                                </center>
+
+                            </td>
+                            <td style="width: 33%; border: 1px solid black; padding: 5px;">
+                                Provides background music from attractive songs and remixes them through cat covers.
+
+                            </td>
+                        </tr>
+
+                        <tr style="vertical-align: middle; width: 100%; border: 1px solid black;">
+                            <td style="width: 33%; padding: 5px;">
+                                Has simple but special graphics. The neon lights in the game and animation effects
+                                remind me of "80s neon synthwave" images.
+                            </td>
+                            <td
+                                style="width: 33%; font-size: 25px; font-weight: 600; color: #6f6f6f; border: 1px solid black;">
+                                <center>
+                                    Graphics and Design
+                                </center>
+
+                            </td>
+                            <td style="width: 33%; border: 1px solid black; padding: 5px;">
+                                Uses graphics designed in a "cute and simple" style. This design creates a fun and
+                                adorable feeling for players.
+                            </td>
+                        </tr>
+
+                        <tr style="vertical-align: middle; width: 100%; border: 1px solid black;">
+                            <td style="width: 33%; padding: 5px;">
+                                There are no difficulty levels, players can conquer the song then play its infinity
+                                version and try to achieve the highest record.
+                            </td>
+                            <td
+                                style="width: 33%; font-size: 25px; font-weight: 600; color: #6f6f6f; border: 1px solid black;">
+                                <center>
+                                    Game Modes and Challenges
+                                </center>
+
+                            </td>
+                            <td style="width: 33%; border: 1px solid black; padding: 5px;">
+                                Does not provide difficulty, the game brings a sense of relaxation by letting players
+                                just play and complete the song and earn coins to decorate the game as desired.
+                            </td>
+                        </tr>
+                    </table>
+                    <div style="font-weight: 600; margin-top: 10px;">
+                        Choosing between "Tiles Hop" and "Duet Cats" depends on personal preference and player profile.
+                        Each game offers a unique and fun experience in the music and rhythm game genre. For me, I would
+                        favor Tiles Hop because of my love for "80s neon synthwave" art and my taste in music (I love
+                        serious music more than cute music).
+                    </div>
+
+
+
+
+
+
+                    <!-- next button ======================================================================== -->
+                    <!-- ==================================================================================== -->
+                    <!-- ==================================================================================== -->
+                    <div style="width: 100%; display: flex; justify-content: right; margin-top: 10px;">
+                        <button id="nextgame" class="button">
+                            🥳 Finish 🥳
+                        </button>
+                    </div>
+
+
+                </div>
+
+            </div>
+        </div>
+
+        <!-- bground -->
+        <div style="position: fixed; top: 0; left: 0; width: 100%; height: 100vh; z-index: -1;">
+            <div style="position: relative; width: 100%; height: 100%;">
+                <div style="background-color: rgba(0, 0, 0, 0.644); width: 100%; height: 100%; position: absolute;">
+                </div>
+                <img style="width: 100%; height: 100%; object-fit: cover;"
+                    src="resources/56433c06638810cd47b086c15b7dc020.gif" alt="">
+            </div>
+        </div>
+
+    </div>
+
+
+
+    <script>
+        function open_motiovation_1() {
+            var motivation1 = document.getElementById("motivation1");
+            var openmotivation1 = document.getElementById("openmotivation1");
+
+            motivation1.innerHTML = `<div style="width: 100%; border-radius: 10px; border: rgb(255, 0, 128) 2px solid; padding: 5px 10px; font-size: 20px; color: rgb(231, 231, 231); font-weight: 600; background-color: rgb(255, 0, 128);">
+                                        <i class="fa fa-arrow-circle-o-down" aria-hidden="true"></i> First motivation (click me)
+                                    </div>`;
+
+            openmotivation1.innerHTML = `<div style="width: 100%; padding: 0px 10px 10px 10px;" data-aos="fade-down">
+                Unlike the previous titles mentioned, Duet Cat offers a gentle playing experience instead of creating increasing challenges to challenge players. The gentle style of the game along with the cuteness of the cats can show that the game's target audience is not "try hard" gamers. Creating a gentle playing environment can be of great interest to gamers who prioritize entertainment over competition. The evidence that can be mentioned is the resounding success of gentle relaxation games such as Sky Garden, Animal Crossing, etc.
+                    </div>`;
+        }
+
+
+        function open_motiovation_2() {
+            var motivation2 = document.getElementById("motivation2");
+            var openmotivation2 = document.getElementById("openmotivation2");
+
+            motivation2.innerHTML = `<div style="width: 100%; border-radius: 10px; border: rgb(255, 0, 128) 2px solid; padding: 5px 10px; font-size: 20px; color: rgb(231, 231, 231); font-weight: 600; background-color: rgb(255, 0, 128);">
+                                        <i class="fa fa-arrow-circle-o-down" aria-hidden="true"></i> Second motivation (click me)
+                                    </div>`;
+
+            openmotivation2.innerHTML = `<div style="width: 100%; padding: 0px 10px 10px 10px;" data-aos="fade-down">
+                Duet Cats approaches inspiring players by allowing them to take time and look back at what they have done in the game. Unlike the previous 3 games, there is no player ranking, and does not mention too much about scores. Instead, like the approach of relaxing games, Duet Cats wants players to reflect on what they have done through the playing process. Players can decorate the cat's house with household items through coins earned during the game. This approach is similar to “Minecraft” gamers building and viewing their build, “Play Together” gamers earning in-game currency and decorating their homes, or the closest example to Duet Cats in this regard is “Neko Atsume”.
+                    </div>`;
+        }
+
+
+
+
+    </script>
+
+
+
+
+    <script>
+        var button_hover_audio = document.getElementById("button_hover");
+        var button_click_audio = document.getElementById("button_click");
+        // button_hover_audio.play();
+        const button = document.querySelectorAll('.button');
+        button.forEach((button) => {
+            button.addEventListener('mouseover', () => {
+                button_hover_audio.play();
+            })
+        });
+
+        document.getElementById("nextgame").onclick = function () {
+            button_click_audio.play();
+            fadeIn();
+            setTimeout(function () {
+                // Replace 'newPage.html' with the URL of the page you want to redirect to
+                window.location.href = 'finish-page.html';
+            }, 1000);
+        }
+
+        function fadeIn() {
+            loading.style.display = "flex";
+            loading.style.opacity = 1;
+        }
+
+    </script>
+
+
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // Get the element to fade
+            var loading = document.getElementById("loading");
+
+            // Set the initial opacity
+            loading.style.opacity = 1;
+
+            // Function to fade the element to transparent
+            function fadeOutAndHide() {
+                loading.style.opacity = 0;
+
+                // Set display to "none" after the fading animation is complete
+                setTimeout(function () {
+                    loading.style.display = "none";
+                }, 1000); // 1000 milliseconds is the duration of the fade animation
+            }
+
+
+
+
+            // Call the fadeOutAndHide function after a delay (e.g., 3 seconds)
+            setTimeout(fadeOutAndHide, 3000);
+        });
+    </script>
+
+
+    <!-- animation -->
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+
+
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

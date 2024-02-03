@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎵🎵🎵</title>
+    <link rel="icon" href="resources/moonware-logo-removebg-preview2.png">
+
+    <!-- fading animation -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
+
+    <!-- icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <!-- prevent right click -->
+    <script>
+        document.addEventListener('contextmenu', function (e) {
+            e.preventDefault();
+        });
+    </script>
+
+
+
+
+
+
+    <!-- prevent user press f12 -->
+    <script>
+        document.onkeydown = function (e) {
+            if (e.key === 'F12' || e.keyCode === 123) {
+                e.preventDefault();
+            }
+        };
+    </script>
+
+
+
+
+
+
+    <!-- prevent user press ctrl + u -->
+    <script>
+        document.addEventListener('keydown', function (e) {
+            if (e.ctrlKey && (e.key === 'u' || e.key === 'U')) {
+                e.preventDefault();
+            }
+        });
+    </script>
+
+
+
+
+
+
+    <!-- prevent user press ctrl + s -->
+    <script>
+        document.addEventListener('keydown', function (e) {
+            if (e.ctrlKey && (e.key === 's' || e.key === 'S')) {
+                e.preventDefault();
+            }
+        });
+    </script>
+
+    <style>
+        .button {
+            font-size: 20px;
+            border: 5px;
+            padding: 0px 20px;
+            background-color: rgb(231, 231, 231);
+            border: rgb(255, 0, 128) solid 2px;
+            border-radius: 25px;
+            color: rgb(255, 0, 128);
+            font-weight: 600;
+            margin: 5px 0px;
+            transition: background-color 0.5s ease;
+            transition: color 0.5s ease;
+        }
+
+        .button:hover {
+            font-size: 20px;
+            border: 5px;
+            padding: 0px 20px;
+            background-color: rgb(255, 0, 128);
+            border: rgb(255, 0, 128) solid 2px;
+            border-radius: 25px;
+            color: rgb(231, 231, 231);
+            font-weight: 600;
+            margin: 5px 0px;
+        }
+
+
+        .motivation {
+            margin-top: 5px;
+            width: 100%;
+            border-radius: 10px;
+            border: rgb(255, 0, 128) 2px solid;
+            padding: 5px 10px;
+            font-size: 20px;
+            color: rgb(255, 0, 128);
+            font-weight: 600;
+            background-color: rgb(231, 231, 231);
+            transition: background-color 0.5s ease;
+            transition: color 0.5s ease;
+        }
+
+        .motivation:hover {
+            margin-top: 5px;
+            width: 100%;
+            border-radius: 10px;
+            border: rgb(255, 0, 128) 2px solid;
+            padding: 5px 10px;
+            font-size: 20px;
+            color: rgb(231, 231, 231);
+            font-weight: 600;
+            background-color: rgb(255, 0, 128);
+        }
+    </style>
+</head>
+
+<body style="position: relative;">
+
+
+    <audio id="button_hover">
+        <source src="audio/button-hover.mp3">
+        </source>
+    </audio>
+
+    <audio id="button_click">
+        <source src="audio/button_clicked.mp3">
+        </source>
+    </audio>
+
+
+
+    <!-- loading -->
+    <div id="loading"
+        style="width: 100%; height: 100vh; display: flex; justify-content: center; align-items: center; background-color: rgb(231, 231, 231); position: fixed; z-index: 5; transition: opacity 1s ease;">
+        <div>
+            <img style="width: 200px;" src="resources/cosplay fnf.gif" alt="">
+            <div style="text-align: center; padding-top: 20px; font-size: 30px; font-weight: 700;">
+                LOADING
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+    <!-- main part -->
+    <div>
+        <!-- head bar -->
+        <div
+            style="width: 100%; height: 50px; background-image: linear-gradient(to right, rgb(255, 0, 128) , rgb(29, 185, 94));; display: flex; justify-content: center; align-items: center; position: fixed; top: 0; z-index: 6;">
+            <div style="height: fit-content; ">
+                <table>
+                    <tr>
+                        <td><img style="height: 40px;" src="resources/moonware-logo-removebg-preview.png" alt=""></td>
+                        <td
+                            style="font-size: 40px; font-weight: 700; padding: 0px 40px; color: white; text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;">
+                            X</td>
+                        <td><img style="height: 35px;"
+                                src="resources/Amanotes_logo@2x.ed37484ecb917cb64c2586fbfdc6ab584918f1f7.png" alt="">
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <!-- content -->
+        <div
+            style="width: 100%; height: fit-content; padding: 60px 0px; display: flex; justify-content: center; overflow: hidden;">
+            <div
+                style="width: 800px; height: 100%; border: rgb(255, 0, 128) solid 5px; border-radius: 25px; background-color: rgb(231, 231, 231);">
+
+                <!-- page-1 -->
+                <div style="padding: 20px; width: 100%;">
+
+
+
+
+
+
+
+
+
+
+
+
+                    <!-- game play ========================================================================== -->
+                    <!-- ==================================================================================== -->
+                    <!-- ==================================================================================== -->
+                    <div style="font-weight: 800; font-size: 25px; color: rgb(255, 0, 128); margin-top: 10px;">
+                        1. Explain the core game mechanic of the game.
+                    </div>
+                    <div style="font-weight: 600; margin-top: 10px;">
+                        Beatstar's core gameplay mechanics largely revolve around interacting with on-screen tiles to
+                        play music and keep to the beat. Here are some key points of the gameplay mechanism that I
+                        learned when experiencing the game Beatstar:
+                    </div>
+                    <table style="margin-top: 10px;">
+                        <tr style="vertical-align: top;">
+                            <td style="width: 35%;">
+                                <div style="height: 100%;">
+                                    <img style="width: 100%; height: 100%; object-fit: contain; border-radius: 25px; border: #38C68B 5px solid;"
+                                        src="resources/duality-slipknot.gif" alt="">
+                                </div>
+                            </td>
+                            <td style="width: 65%; padding-left: 20px;">
+
+                                <ul>
+                                    <li>
+                                        The game requires players to press and hold at the right time. The player needs
+                                        to tap on the music tiles as they move across the screen on 3 rows. Pressing
+                                        needs to be done at the right time to create perfect notes.
+                                    </li>
+                                    <li style="margin-top: 2px;">
+                                        The game requires the player to select music and unlock new music through
+                                        Levels. The game offers a variety of tracks that can potentially be unlocked
+                                        through the player's level. Players can unlock music by opening a case
+                                        containing random music. Players can choose their favorite track and try to get
+                                        the highest score by making as many “perfect taps” as possible.
+                                    </li>
+                                    <li style="margin-top: 2px;">
+                                        Player level will directly affect scores and combo effects (effects will appear
+                                        when many perfect taps are performed through my experience). Players receive
+                                        points based on pressing at the right time and keeping in rhythm. Correct
+                                        performance and not letting the music tiles fall will determine their score. If
+                                        the player lets the brick pass, the player will have to reset the recent part of
+                                        the song that they have missed.
+                                    </li>
+                                    <li style="margin-top: 2px;">
+                                        The difficulty of the game will gradually increase corresponding to the player's
+                                        level. Players with higher levels must challenge with greater difficulty (“With
+                                        great power comes great responsibility” – Uncle Ben).
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    <!-- music use ========================================================================== -->
+                    <!-- ==================================================================================== -->
+                    <!-- ==================================================================================== -->
+                    <div style="font-weight: 800; font-size: 25px; color: rgb(255, 0, 128); margin-top: 10px;">
+                        2. Explain and compare how music is integrated with the gameplay of the game.
+                    </div>
+                    <div style="font-weight: 600; margin-top: 10px;">
+                        Integrating music into games is a great way to influence gamers' inspiration and psychology
+                        (I also did this in my university game project). Integrating music into Beatstar's gameplay
+                        is no longer strange for music-themed games, but for me, it still has its own charm. Here is
+                        my opinion on how this game integrates music:
+                    </div>
+                    <table style="margin-top: 10px;">
+                        <tr style="vertical-align: top;">
+                            <td style="width: 80%; padding-right: 20px;" data-aos="fade-right">
+                                <ul>
+                                    <li>
+                                        Beatstar has chosen music methodically and paid attention to users' tastes.
+                                        Through observing the list of songs in the playlist, I noticed that the game
+                                        provided much popular and diverse music from many different genres. These
+                                        tracks are chosen because they bring familiarity or have attractive melodies
+                                        that motivate the player. However, if I'm not mistaken, perhaps this
+                                        application is mainly aimed at international users based on the fact that
+                                        the application only provides songs of the European and American genre,
+                                        maybe other Korean songs but I only see Gangnam style (or maybe my knowledge
+                                        of Korean music is quite limited).
+                                    </li>
+                                    <li style="margin-top: 2px;">
+                                        Beatstar can be considered an upgraded version of the legendary "Don't Tap
+                                        the White Tile" when it divided the Music into Music tiles. Each track is
+                                        divided into music tiles that move across the screen according to a certain
+                                        rule. In my experience, each tile corresponds to a note, a small part of the
+                                        music, or a word that the singer sings in the song.
+                                    </li>
+                                </ul>
+                            </td>
+                            <td style="width: 20%;">
+                                <div style="height: 100%;">
+                                    <img style="width: 100%; height: 100%; object-fit: contain; border-radius: 25px; border: #38C68B 5px solid;"
+                                        src="resources/beatstar_1649745292017.png" alt="">
+                                </div>
+                            </td>
+
+                        </tr>
+                    </table>
+                    <table style="margin-top: 10px;">
+                        <tr style="vertical-align: top;">
+                            <td style="width: 20%;">
+                                <div style="height: 100%;">
+                                    <img style="width: 100%; height: 100%; object-fit: contain; border-radius: 25px; border: #38C68B 5px solid;"
+                                        src="resources/91d910ded0a471c57bef3efa593ed4d9.png" alt="">
+                                </div>
+                            </td>
+                            <td style="width: 80%; padding-left: 20px;" data-aos="fade-left">
+                                <ul>
+                                    <li>
+                                        Beatstar Moves music tiles according to the beat of the song. Moving the
+                                        music brick across the screen is synchronized with the rhythm of the music.
+                                        Players need to tap or hold on the boxes containing the music tiles at the
+                                        right time to create the correct sound and keep in tune with the beat.
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    <!-- motivation ========================================================================= -->
+                    <!-- ==================================================================================== -->
+                    <!-- ==================================================================================== -->
+                    <div style="font-weight: 800; font-size: 25px; color: rgb(255, 0, 128); margin-top: 10px;">
+                        3. What is the motivation that keeps players playing & coming back in these games? Explain
+                        how the game creates that motivation with its systems & design.
+                    </div>
+
+
+                    <div style="font-weight: 600; margin-top: 10px;">
+                        This is the first game I tried. Based on personal experience, I have drawn the following
+                        conclusions about what motivates players to continue playing the game:
+                    </div>
+
+
+
+                    <div id="motivation1">
+                        <div onclick="open_motiovation_1()" class="motivation">
+                            <i class="fa fa-arrow-circle-o-right" aria-hidden="true"></i> First motivation (click
+                            me)
+                        </div>
+                    </div>
+                    <div id="openmotivation1"></div>
+
+
+
+                    <div id="motivation2">
+                        <div onclick="open_motiovation_2()" class="motivation">
+                            <i class="fa fa-arrow-circle-o-right" aria-hidden="true"></i> Second motivation (click
+                            me)
+                        </div>
+                    </div>
+                    <div id="openmotivation2"></div>
+
+
+
+
+                    <div id="motivation3">
+                        <div onclick="open_motiovation_3()" class="motivation">
+                            <i class="fa fa-arrow-circle-o-right" aria-hidden="true"></i> Third motivation (click
+                            me)
+                        </div>
+                    </div>
+                    <div id="openmotivation3"></div>
+
+
+
+
+                    <div id="motivation4">
+                        <div onclick="open_motiovation_4()" class="motivation">
+                            <i class="fa fa-arrow-circle-o-right" aria-hidden="true"></i> Fourth motivation (click
+                            me)
+                        </div>
+                    </div>
+                    <div id="openmotivation4"></div>
+
+
+
+
+                    <div id="motivation5">
+                        <div onclick="open_motiovation_5()" class="motivation">
+                            <i class="fa fa-arrow-circle-o-right" aria-hidden="true"></i> Fifth motivation (click
+                            me)
+                        </div>
+                    </div>
+                    <div id="openmotivation5"></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    <!-- aesthetic ========================================================================== -->
+                    <!-- ==================================================================================== -->
+                    <!-- ==================================================================================== -->
+                    <div style="font-weight: 800; font-size: 25px; color: rgb(255, 0, 128); margin-top: 10px;">
+                        4. Describe the style and aesthetic of the game. Explain how the game achieves that aesthetic
+                        through its design, art, and audio.
+                    </div>
+                    <div style="font-weight: 600; margin-top: 10px;">
+                        As for style, the Beatstar gameplay screen has a simple and minimalist design style,
+                        focusing mainly on music tiles moving on the screen. The user interface is designed to make
+                        the game intuitive and easy to use. In terms of aesthetics, music tiles, and motion effects
+                        create a colorful and lively screen. The player's vision is stimulated through the blend of
+                        music tiles, paths, and outstanding effects.
+                    </div>
+                    <div style="font-weight: 600; margin-top: 10px;">
+                        Players need to tap on the boxes to press exactly to the beat and hold in time with the
+                        music. Accuracy and synchronization with the beat are the keys to getting through songs
+                        (just like a dancer must dance to the exact rhythm and beat of the music). The sound of
+                        musical notes is combined with the smooth movement of music tiles, creating a harmonious
+                        musical and visual experience. Sound effects combined with images enhance the player's
+                        aesthetic experience.
+                    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    <!-- improve ============================================================================ -->
+                    <!-- ==================================================================================== -->
+                    <!-- ==================================================================================== -->
+                    <div style="font-weight: 800; font-size: 25px; color: rgb(255, 0, 128); margin-top: 10px;">
+                        5. Propose briefly 1 critical point you want to improve.
+                    </div>
+                    <div style="margin-top: 10px;">
+                        <Strong>Briefly:</Strong> If possible, updating the feature to compete with other players is
+                        something worth considering.
+                    </div>
+                    <div style="margin-top: 10px;">
+                        <Strong>Details:</Strong> There is no denying the appeal of fighting games today, such as
+                        Valorant, and League of Legends... Adding a fighting feature is like creating a fierce
+                        battle between two players on the music stage. This idea was inspired by rap battles or bboy
+                        battles similar to "Friday Night Funkin'. Creating a competitive environment will activate
+                        players' competitive instincts, thereby motivating them to practice and get ready for the
+                        next Beatstar battles.
+                    </div>
+
+
+
+
+                    <!-- next button ======================================================================== -->
+                    <!-- ==================================================================================== -->
+                    <!-- ==================================================================================== -->
+                    <div style="width: 100%; display: flex; justify-content: right; margin-top: 10px;">
+                        <button id="nextgame" class="button">
+                            Next game (magic tiles 3) <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                        </button>
+                    </div>
+
+
+                </div>
+
+            </div>
+        </div>
+
+        <!-- bground -->
+        <div style="position: fixed; top: 0; left: 0; width: 100%; height: 100vh; z-index: -1;">
+            <div style="position: relative; width: 100%; height: 100%;">
+                <div style="background-color: rgba(0, 0, 0, 0.644); width: 100%; height: 100%; position: absolute;">
+                </div>
+                <img style="width: 100%; height: 100%; object-fit: cover;"
+                    src="resources/56433c06638810cd47b086c15b7dc020.gif" alt="">
+            </div>
+        </div>
+
+    </div>
+
+
+
+    <script>
+        function open_motiovation_1() {
+            var motivation1 = document.getElementById("motivation1");
+            var openmotivation1 = document.getElementById("openmotivation1");
+
+            motivation1.innerHTML = `<div style="width: 100%; border-radius: 10px; border: rgb(255, 0, 128) 2px solid; padding: 5px 10px; font-size: 20px; color: rgb(231, 231, 231); font-weight: 600; background-color: rgb(255, 0, 128);">
+                                        <i class="fa fa-arrow-circle-o-down" aria-hidden="true"></i> First motivation (click me)
+                                    </div>`;
+
+            openmotivation1.innerHTML = `<div style="width: 100%; padding: 0px 10px 10px 10px;" data-aos="fade-down">
+                Beatstar inspires by creating challenge and difficulty. Beatstar's design system has increasing difficulty levels based on the player's current level. This encourages players to try to improve their skills to level up and experience other challenges.
+                    </div>`;
+        }
+
+
+        function open_motiovation_2() {
+            var motivation2 = document.getElementById("motivation2");
+            var openmotivation2 = document.getElementById("openmotivation2");
+
+            motivation2.innerHTML = `<div style="width: 100%; border-radius: 10px; border: rgb(255, 0, 128) 2px solid; padding: 5px 10px; font-size: 20px; color: rgb(231, 231, 231); font-weight: 600; background-color: rgb(255, 0, 128);">
+                                        <i class="fa fa-arrow-circle-o-down" aria-hidden="true"></i> Second motivation (click me)
+                                    </div>`;
+
+            openmotivation2.innerHTML = `<div style="width: 100%; padding: 0px 10px 10px 10px;" data-aos="fade-down">
+                Beatstar attracts players through its Score and Ranking System. Beatstar has a score and ranking system where players can compare their performance with other players. This creates competition and motivates players to try to achieve higher scores and climb the leaderboards.
+                    </div>`;
+        }
+
+
+        function open_motiovation_3() {
+            var motivation3 = document.getElementById("motivation3");
+            var openmotivation3 = document.getElementById("openmotivation3");
+
+            motivation3.innerHTML = `<div style="width: 100%; border-radius: 10px; border: rgb(255, 0, 128) 2px solid; padding: 5px 10px; font-size: 20px; color: rgb(231, 231, 231); font-weight: 600; background-color: rgb(255, 0, 128);">
+                                        <i class="fa fa-arrow-circle-o-down" aria-hidden="true"></i> Third motivation (click me)
+                                    </div>`;
+
+            openmotivation3.innerHTML = `<div style="width: 100%; padding: 0px 10px 10px 10px;" data-aos="fade-down">
+                Beatstar attracts players through Rewards and Experience Points. Beatstar offers rewards including coins to unlock music tickets and experience points when players achieve specific goals or complete challenges. The redeemed music tickets will be used to exchange for a random song. This creates a positive incentive system, making the player want to continue to gain more rewards and increase levels.
+                    </div>`;
+        }
+
+
+        function open_motiovation_4() {
+            var motivation4 = document.getElementById("motivation4");
+            var openmotivation4 = document.getElementById("openmotivation4");
+
+            motivation4.innerHTML = `<div style="width: 100%; border-radius: 10px; border: rgb(255, 0, 128) 2px solid; padding: 5px 10px; font-size: 20px; color: rgb(231, 231, 231); font-weight: 600; background-color: rgb(255, 0, 128);">
+                                        <i class="fa fa-arrow-circle-o-down" aria-hidden="true"></i> Fourth motivation (click me)
+                                    </div>`;
+
+            openmotivation4.innerHTML = `<div style="width: 100%; padding: 0px 10px 10px 10px;" data-aos="fade-down">
+                Beatstar has Diversity in Content. Beatstar has many different tracks and levels, creating diversity in content. Players can choose from a variety of music genres and new challenges, keeping the game fresh and exciting. Songs require players to level up and have enough tickets to be able to unlock them based on their luck.
+                    </div>`;
+        }
+
+
+        function open_motiovation_5() {
+            var motivation5 = document.getElementById("motivation5");
+            var openmotivation5 = document.getElementById("openmotivation5");
+
+            motivation5.innerHTML = `<div style="width: 100%; border-radius: 10px; border: rgb(255, 0, 128) 2px solid; padding: 5px 10px; font-size: 20px; color: rgb(231, 231, 231); font-weight: 600; background-color: rgb(255, 0, 128);">
+                                        <i class="fa fa-arrow-circle-o-down" aria-hidden="true"></i> Fifth motivation (click me)
+                                    </div>`;
+
+            openmotivation5.innerHTML = `<div style="width: 100%; padding: 0px 10px 10px 10px;" data-aos="fade-down">
+                Beatstar has a familiar and innovative User Interface. Beatstar's user interface has a design similar to music listening applications, making it easy to use and familiar to users. This helps players easily participate in the game, learn how to play and actively participate in different activities. In addition, the above interface design gave me an initial impression of the game with music as the central theme.
+                    </div>`;
+        }
+    </script>
+
+
+
+
+    <script>
+        var button_hover_audio = document.getElementById("button_hover");
+        var button_click_audio = document.getElementById("button_click");
+        // button_hover_audio.play();
+        const button = document.querySelectorAll('.button');
+        button.forEach((button) => {
+            button.addEventListener('mouseover', () => {
+                button_hover_audio.play();
+            })
+        });
+
+        document.getElementById("nextgame").onclick = function () {
+            button_click_audio.play();
+            fadeIn();
+            setTimeout(function () {
+                // Replace 'newPage.html' with the URL of the page you want to redirect to
+                window.location.href = 'magic-tiles-3.html';
+            }, 1000);
+        }
+
+        function fadeIn() {
+            loading.style.display = "flex";
+            loading.style.opacity = 1;
+        }
+
+    </script>
+
+
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // Get the element to fade
+            var loading = document.getElementById("loading");
+
+            // Set the initial opacity
+            loading.style.opacity = 1;
+
+            // Function to fade the element to transparent
+            function fadeOutAndHide() {
+                loading.style.opacity = 0;
+
+                // Set display to "none" after the fading animation is complete
+                setTimeout(function () {
+                    loading.style.display = "none";
+                }, 1000); // 1000 milliseconds is the duration of the fade animation
+            }
+
+
+
+
+            // Call the fadeOutAndHide function after a delay (e.g., 3 seconds)
+            setTimeout(fadeOutAndHide, 3000);
+        });
+    </script>
+
+
+    <!-- animation -->
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+
+
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

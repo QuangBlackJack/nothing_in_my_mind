@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎵🎵🎵</title>
+    <link rel="icon" href="resources/moonware-logo-removebg-preview2.png">
+
+    <!-- fading animation -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
+
+    <!-- icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+
+
+    <!-- prevent right click -->
+    <script>
+        document.addEventListener('contextmenu', function (e) {
+            e.preventDefault();
+        });
+    </script>
+
+
+
+
+
+
+    <!-- prevent user press f12 -->
+    <script>
+        document.onkeydown = function (e) {
+            if (e.key === 'F12' || e.keyCode === 123) {
+                e.preventDefault();
+            }
+        };
+    </script>
+
+
+
+
+
+
+    <!-- prevent user press ctrl + u -->
+    <script>
+        document.addEventListener('keydown', function (e) {
+            if (e.ctrlKey && (e.key === 'u' || e.key === 'U')) {
+                e.preventDefault();
+            }
+        });
+    </script>
+
+
+
+
+
+
+    <!-- prevent user press ctrl + s -->
+    <script>
+        document.addEventListener('keydown', function (e) {
+            if (e.ctrlKey && (e.key === 's' || e.key === 'S')) {
+                e.preventDefault();
+            }
+        });
+    </script>
+
+
+
+
+
+    <style>
+        .button {
+            font-size: 20px;
+            border: 5px;
+            padding: 0px 20px;
+            background-color: rgb(231, 231, 231);
+            border: rgb(255, 0, 128) solid 2px;
+            border-radius: 25px;
+            color: rgb(255, 0, 128);
+            font-weight: 600;
+            margin: 5px 0px;
+            transition: background-color 0.5s ease;
+            transition: color 0.5s ease;
+        }
+
+        .button:hover {
+            font-size: 20px;
+            border: 5px;
+            padding: 0px 20px;
+            background-color: rgb(255, 0, 128);
+            border: rgb(255, 0, 128) solid 2px;
+            border-radius: 25px;
+            color: rgb(231, 231, 231);
+            font-weight: 600;
+            margin: 5px 0px;
+        }
+
+
+        .motivation {
+            margin-top: 5px;
+            width: 100%;
+            border-radius: 10px;
+            border: rgb(255, 0, 128) 2px solid;
+            padding: 5px 10px;
+            font-size: 20px;
+            color: rgb(255, 0, 128);
+            font-weight: 600;
+            background-color: rgb(231, 231, 231);
+            transition: background-color 0.5s ease;
+            transition: color 0.5s ease;
+        }
+
+        .motivation:hover {
+            margin-top: 5px;
+            width: 100%;
+            border-radius: 10px;
+            border: rgb(255, 0, 128) 2px solid;
+            padding: 5px 10px;
+            font-size: 20px;
+            color: rgb(231, 231, 231);
+            font-weight: 600;
+            background-color: rgb(255, 0, 128);
+        }
+    </style>
+</head>
+
+<body style="position: relative;">
+
+
+    <audio id="button_hover">
+        <source src="audio/button-hover.mp3">
+        </source>
+    </audio>
+
+    <audio id="button_click">
+        <source src="audio/button_clicked.mp3">
+        </source>
+    </audio>
+
+
+
+    <!-- loading -->
+    <div id="loading"
+        style="width: 100%; height: 100vh; display: flex; justify-content: center; align-items: center; background-color: rgb(231, 231, 231); position: fixed; z-index: 5; transition: opacity 1s ease;">
+        <div>
+            <img style="width: 200px;" src="resources/cosplay fnf.gif" alt="">
+            <div style="text-align: center; padding-top: 20px; font-size: 30px; font-weight: 700;">
+                LOADING
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+    <!-- main part -->
+    <div>
+        <!-- head bar -->
+        <div
+            style="width: 100%; height: 50px; background-image: linear-gradient(to right, rgb(255, 0, 128) , rgb(29, 185, 94));; display: flex; justify-content: center; align-items: center; position: fixed; top: 0; z-index: 6;">
+            <div style="height: fit-content; ">
+                <table>
+                    <tr>
+                        <td><img style="height: 40px;" src="resources/moonware-logo-removebg-preview.png" alt=""></td>
+                        <td
+                            style="font-size: 40px; font-weight: 700; padding: 0px 40px; color: white; text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;">
+                            X</td>
+                        <td><img style="height: 35px;"
+                                src="resources/Amanotes_logo@2x.ed37484ecb917cb64c2586fbfdc6ab584918f1f7.png" alt="">
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <!-- content -->
+        <div
+            style="width: 100%; height: fit-content; padding: 60px 0px; display: flex; justify-content: center; overflow: hidden;">
+            <div
+                style="width: 800px; height: 100%; border: rgb(255, 0, 128) solid 5px; border-radius: 25px; background-color: rgb(231, 231, 231);">
+
+                <!-- page-1 -->
+                <div style="padding: 20px; width: 100%;">
+
+
+
+
+
+
+                    <div>
+                        <center>
+                            <img style="width: 200px; height: 200px; border-radius: 999px; border: #38C68B 5px solid;"
+                                src="resources/happy-anime-taiga-aisaka-37mn59oq061m7g63.gif" alt="">
+                        </center>
+                    </div>
+
+
+
+
+
+                    <!-- game play ========================================================================== -->
+                    <!-- ==================================================================================== -->
+                    <!-- ==================================================================================== -->
+                    <div
+                        style="font-weight: 800; font-size: 25px; color: rgb(255, 0, 128); margin-top: 10px; text-align: center;">
+                        ❤️ Thank you for reading ❤️
+                    </div>
+                    <div style="font-weight: 600; margin-top: 10px;">
+                        Thank you for reading to the end of my report for this case study. I really appreciate that! I
+                        apologize for submitting this report relatively late. I've been quite busy lately, I have to
+                        constantly interact with my users as well as work on new personal projects. However, I wanted to
+                        create a report with a unique style and treat it as a special gift for Amanotes. The name
+                        Moonware is a new game studio that I founded even though I haven't officially graduated from
+                        college yet. Hope you don't misunderstand that it is the name of a business or company. I hope
+                        we can cooperate and create beautiful stories together during the upcoming internship. Wishing
+                        the entire Amanotes company success in their careers and especially happiness with family and
+                        friends during the upcoming traditional Tet holiday.
+                    </div>
+
+                    <div style="font-weight: 500; margin-top: 10px; color: #6f6f6f;">
+                        How do you feel about this reporting method? I always want to create surprises and am excited to
+                        know how people feel about the surprises I bring (like a magician). If possible, please let me
+                        know your thoughts in the form below.
+                    </div>
+
+
+                    <div style="padding: 10px;">
+                        <div style="padding: 10px; border: #38C68B 5px solid; border-radius: 25px;">
+                            <form action="https://formspree.io/f/mnqepdvw" method="post">
+                                <div class="form-group">
+                                    <label for="exampleFormControlInput1"><strong>Email address</strong></label>
+                                    <input name="email" type="email" class="form-control" id="exampleFormControlInput1"
+                                        placeholder="name@example.com">
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleFormControlSelect1"><strong>Level of satisfaction</strong> (max:
+                                        5 points😎, min:
+                                        1 point😢)</label>
+                                    <select name="point" class="form-control" id="exampleFormControlSelect1">
+                                        <option>1 point</option>
+                                        <option>2 points</option>
+                                        <option>3 points</option>
+                                        <option>4 points</option>
+                                        <option>5 points</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleFormControlTextarea1"><strong>Your opinion</strong></label>
+                                    <textarea name="opinion" class="form-control" id="exampleFormControlTextarea1"
+                                        rows="3"></textarea>
+                                </div>
+
+                                <div style="width: 100%; display: flex; justify-content: right; margin-top: 10px;">
+                                    <button type="submit" class="button">
+                                        Send To Quang 💌
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+
+                </div>
+
+            </div>
+        </div>
+
+        <!-- bground -->
+        <div style="position: fixed; top: 0; left: 0; width: 100%; height: 100vh; z-index: -1;">
+            <div style="position: relative; width: 100%; height: 100%;">
+                <div style="background-color: rgba(0, 0, 0, 0.644); width: 100%; height: 100%; position: absolute;">
+                </div>
+                <img style="width: 100%; height: 100%; object-fit: cover;"
+                    src="resources/56433c06638810cd47b086c15b7dc020.gif" alt="">
+            </div>
+        </div>
+
+    </div>
+
+
+
+    <script>
+        function open_motiovation_1() {
+            var motivation1 = document.getElementById("motivation1");
+            var openmotivation1 = document.getElementById("openmotivation1");
+
+            motivation1.innerHTML = `<div style="width: 100%; border-radius: 10px; border: rgb(255, 0, 128) 2px solid; padding: 5px 10px; font-size: 20px; color: rgb(231, 231, 231); font-weight: 600; background-color: rgb(255, 0, 128);">
+                                        <i class="fa fa-arrow-circle-o-down" aria-hidden="true"></i> first motivation (click me)
+                                    </div>`;
+
+            openmotivation1.innerHTML = `<div style="width: 100%; padding: 0px 10px 10px 10px;" data-aos="fade-down">
+                Unlike the previous titles mentioned, Duet Cat offers a gentle playing experience instead of creating increasing challenges to challenge players. The gentle style of the game along with the cuteness of the cats can show that the game's target audience is not "try hard" gamers. Creating a gentle playing environment can be of great interest to gamers who prioritize entertainment over competition. The evidence that can be mentioned is the resounding success of gentle relaxation games such as Sky Garden, Animal Crossing, etc.
+                    </div>`;
+        }
+
+
+        function open_motiovation_2() {
+            var motivation2 = document.getElementById("motivation2");
+            var openmotivation2 = document.getElementById("openmotivation2");
+
+            motivation2.innerHTML = `<div style="width: 100%; border-radius: 10px; border: rgb(255, 0, 128) 2px solid; padding: 5px 10px; font-size: 20px; color: rgb(231, 231, 231); font-weight: 600; background-color: rgb(255, 0, 128);">
+                                        <i class="fa fa-arrow-circle-o-down" aria-hidden="true"></i> first motivation (click me)
+                                    </div>`;
+
+            openmotivation2.innerHTML = `<div style="width: 100%; padding: 0px 10px 10px 10px;" data-aos="fade-down">
+                Duet Cats approaches inspiring players by allowing them to take time and look back at what they have done in the game. Unlike the previous 3 games, there is no player ranking, and does not mention too much about scores. Instead, like the approach of relaxing games, Duet Cats wants players to reflect on what they have done through the playing process. Players can decorate the cat's house with household items through coins earned during the game. This approach is similar to “Minecraft” gamers building and viewing their build, “Play Together” gamers earning in-game currency and decorating their homes, or the closest example to Duet Cats in this regard is “Neko Atsume”.
+                    </div>`;
+        }
+
+
+
+
+    </script>
+
+
+
+
+    <script>
+        var button_hover_audio = document.getElementById("button_hover");
+        var button_click_audio = document.getElementById("button_click");
+        // button_hover_audio.play();
+        const button = document.querySelectorAll('.button');
+        button.forEach((button) => {
+            button.addEventListener('mouseover', () => {
+                button_hover_audio.play();
+            })
+        });
+
+        document.getElementById("nextgame").onclick = function () {
+            button_click_audio.play();
+            fadeIn();
+            setTimeout(function () {
+                // Replace 'newPage.html' with the URL of the page you want to redirect to
+                window.location.href = 'beatstar.html';
+            }, 1000);
+        }
+
+        function fadeIn() {
+            loading.style.display = "flex";
+            loading.style.opacity = 1;
+        }
+
+    </script>
+
+
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // Get the element to fade
+            var loading = document.getElementById("loading");
+
+            // Set the initial opacity
+            loading.style.opacity = 1;
+
+            // Function to fade the element to transparent
+            function fadeOutAndHide() {
+                loading.style.opacity = 0;
+
+                // Set display to "none" after the fading animation is complete
+                setTimeout(function () {
+                    loading.style.display = "none";
+                }, 1000); // 1000 milliseconds is the duration of the fade animation
+            }
+
+
+
+
+            // Call the fadeOutAndHide function after a delay (e.g., 3 seconds)
+            setTimeout(fadeOutAndHide, 3000);
+        });
+    </script>
+
+
+    <!-- animation -->
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+
+
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

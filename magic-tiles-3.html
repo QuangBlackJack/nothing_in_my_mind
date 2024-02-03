@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎵🎵🎵</title>
+    <link rel="icon" href="resources/moonware-logo-removebg-preview2.png">
+
+    <!-- fading animation -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
+
+    <!-- icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+
+    <!-- prevent right click -->
+    <script>
+        document.addEventListener('contextmenu', function (e) {
+            e.preventDefault();
+        });
+    </script>
+
+
+
+
+
+
+    <!-- prevent user press f12 -->
+    <script>
+        document.onkeydown = function (e) {
+            if (e.key === 'F12' || e.keyCode === 123) {
+                e.preventDefault();
+            }
+        };
+    </script>
+
+
+
+
+
+
+    <!-- prevent user press ctrl + u -->
+    <script>
+        document.addEventListener('keydown', function (e) {
+            if (e.ctrlKey && (e.key === 'u' || e.key === 'U')) {
+                e.preventDefault();
+            }
+        });
+    </script>
+
+
+
+
+
+
+    <!-- prevent user press ctrl + s -->
+    <script>
+        document.addEventListener('keydown', function (e) {
+            if (e.ctrlKey && (e.key === 's' || e.key === 'S')) {
+                e.preventDefault();
+            }
+        });
+    </script>
+
+    <style>
+        .button {
+            font-size: 20px;
+            border: 5px;
+            padding: 0px 20px;
+            background-color: rgb(231, 231, 231);
+            border: rgb(255, 0, 128) solid 2px;
+            border-radius: 25px;
+            color: rgb(255, 0, 128);
+            font-weight: 600;
+            margin: 5px 0px;
+            transition: background-color 0.5s ease;
+            transition: color 0.5s ease;
+        }
+
+        .button:hover {
+            font-size: 20px;
+            border: 5px;
+            padding: 0px 20px;
+            background-color: rgb(255, 0, 128);
+            border: rgb(255, 0, 128) solid 2px;
+            border-radius: 25px;
+            color: rgb(231, 231, 231);
+            font-weight: 600;
+            margin: 5px 0px;
+        }
+
+
+        .motivation {
+            margin-top: 5px;
+            width: 100%;
+            border-radius: 10px;
+            border: rgb(255, 0, 128) 2px solid;
+            padding: 5px 10px;
+            font-size: 20px;
+            color: rgb(255, 0, 128);
+            font-weight: 600;
+            background-color: rgb(231, 231, 231);
+            transition: background-color 0.5s ease;
+            transition: color 0.5s ease;
+        }
+
+        .motivation:hover {
+            margin-top: 5px;
+            width: 100%;
+            border-radius: 10px;
+            border: rgb(255, 0, 128) 2px solid;
+            padding: 5px 10px;
+            font-size: 20px;
+            color: rgb(231, 231, 231);
+            font-weight: 600;
+            background-color: rgb(255, 0, 128);
+        }
+    </style>
+</head>
+
+<body style="position: relative;">
+
+
+    <audio id="button_hover">
+        <source src="audio/button-hover.mp3">
+        </source>
+    </audio>
+
+    <audio id="button_click">
+        <source src="audio/button_clicked.mp3">
+        </source>
+    </audio>
+
+
+
+    <!-- loading -->
+    <div id="loading"
+        style="width: 100%; height: 100vh; display: flex; justify-content: center; align-items: center; background-color: rgb(231, 231, 231); position: fixed; z-index: 5; transition: opacity 1s ease;">
+        <div>
+            <img style="width: 200px;" src="resources/cosplay fnf.gif" alt="">
+            <div style="text-align: center; padding-top: 20px; font-size: 30px; font-weight: 700;">
+                LOADING
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+    <!-- main part -->
+    <div>
+        <!-- head bar -->
+        <div
+            style="width: 100%; height: 50px; background-image: linear-gradient(to right, rgb(255, 0, 128) , rgb(29, 185, 94));; display: flex; justify-content: center; align-items: center; position: fixed; top: 0; z-index: 6;">
+            <div style="height: fit-content; ">
+                <table>
+                    <tr>
+                        <td><img style="height: 40px;" src="resources/moonware-logo-removebg-preview.png" alt=""></td>
+                        <td
+                            style="font-size: 40px; font-weight: 700; padding: 0px 40px; color: white; text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;">
+                            X</td>
+                        <td><img style="height: 35px;"
+                                src="resources/Amanotes_logo@2x.ed37484ecb917cb64c2586fbfdc6ab584918f1f7.png" alt="">
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <!-- content -->
+        <div
+            style="width: 100%; height: fit-content; padding: 60px 0px; display: flex; justify-content: center; overflow: hidden;">
+            <div
+                style="width: 800px; height: 100%; border: rgb(255, 0, 128) solid 5px; border-radius: 25px; background-color: rgb(231, 231, 231);">
+
+                <!-- page-1 -->
+                <div style="padding: 20px; width: 100%;">
+
+
+
+
+
+
+
+
+
+
+
+
+                    <!-- game play ========================================================================== -->
+                    <!-- ==================================================================================== -->
+                    <!-- ==================================================================================== -->
+                    <div style="font-weight: 800; font-size: 25px; color: rgb(255, 0, 128); margin-top: 10px;">
+                        1. Explain the core game mechanic of the game.
+                    </div>
+                    <div style="font-weight: 600; margin-top: 10px;">
+                        The core gameplay mechanics of Magic Tiles 3 similar to Beatstar mainly revolve around
+                        interacting with the tiles on the screen to play music and keep to the beat. However, there will
+                        be a few changes. Here are some key points of the gameplay mechanism that I found when
+                        experiencing the game Magic Tiles 3:
+                    </div>
+                    <div style="margin-top: 10px;">
+                        <ul>
+                            <li>
+                                The game will still require players to press and hold the correct Time. Players need to
+                                tap on the music tiles as they move across the screen on 4 rows instead of 3 like in
+                                Beatstar. Pressing needs to be done at the right time to create perfect notes.
+                            </li>
+                            <li style="margin-top: 2px;">
+                                Instead of having to unlock music like in Beatstar, players in Magic Tiles 3 can
+                                play any music they want. Songs can be unlocked through watching ads and winning
+                                a song with a perfect score (achieving 3 crowns). In addition, players can play
+                                the entire song for free if they are VIP members (I know this because I only get
+                                1 day of free VIP, I'm broke). Players can choose their favorite music and try
+                                to conquer the song with 3 crowns.
+                            </li>
+                        </ul>
+                    </div>
+                    <table style="margin-top: 10px;">
+                        <tr style="vertical-align: top;">
+                            <td style="width: 65%; padding-right: 20px;">
+                                <ul>
+                                    <li>
+                                        Player level will directly affect the score. Players receive points based on
+                                        pressing at the right time and keeping in rhythm. Correct performance and not
+                                        letting the music tiles fall will determine their score. If the player lets the
+                                        brick pass, the player needs to watch an ad to be able to use one of the limited
+                                        6 lives. For VIP players, there will be no need to watch ads.
+                                    </li>
+                                    <li style="margin-top: 2px;">
+                                        The difficulty of the game will gradually increase the longer the player plays.
+                                        In my experience, at the first 3 stars, the speed will be like holding hands and
+                                        walking with a beautiful girl. In the next 2 crowns, you are transported to a
+                                        large displacement racetrack. At the final crown, the speed will be like you
+                                        meet a deadline with a week's worth of work within 1 hour. Luckily I didn't see
+                                        "rap god" on the playlist.
+                                    </li>
+                                    <li style="margin-top: 2px;">
+                                        The new mechanism that makes Magic Tiles 3 different from Beatstar is probably
+                                        competitiveness. Creating a competitive environment between players through
+                                        quick team matches (4 people) or competing with friends really fascinated me. By
+                                        taking advantage of the game's competitive instinct, I was psychologically
+                                        controlled and wanted to fight again and again until I won a new match.
+                                    </li>
+                                </ul>
+                            </td>
+                            <td style="width: 35%;">
+                                <div style="height: 100%;">
+                                    <img style="width: 100%; height: 100%; object-fit: contain; border-radius: 25px; border: #38C68B 5px solid;"
+                                        src="resources/13.gif" alt="">
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    <!-- music use ========================================================================== -->
+                    <!-- ==================================================================================== -->
+                    <!-- ==================================================================================== -->
+                    <div style="font-weight: 800; font-size: 25px; color: rgb(255, 0, 128); margin-top: 10px;">
+                        2. Explain and compare how music is integrated with the gameplay of the game.
+                    </div>
+                    <div style="font-weight: 600; margin-top: 10px;">
+                        Magic Tiles 3's way of integrating music into the game is similar to Beatstar. Here is my
+                        opinion on how this game integrates music:
+                    </div>
+                    <table style="margin-top: 10px;">
+                        <tr style="vertical-align: top;">
+                            <td style="width: 20%;">
+                                <div style="height: 100%;">
+                                    <img style="width: 100%; height: 100%; object-fit: contain; border-radius: 25px; border: #38C68B 5px solid;"
+                                        src="resources/unnamed.png" alt="">
+                                </div>
+                            </td>
+                            <td style="width: 80%; padding-left: 20px;" data-aos="fade-left">
+                                <ul>
+                                    <li>
+                                        Magic Tiles 3 has chosen music methodically and paid attention to users' tastes.
+                                        Through observing the list of songs in the playlist, I realized that the game
+                                        provided many popular and diverse music from many different genres. These tracks
+                                        are chosen because they bring familiarity or have attractive melodies that
+                                        motivate the player. The difference between Magic Tiles 3 and Beatstar is
+                                        probably the appearance of Vietnamese music. The presence of "Ghe Yeu Dau" and
+                                        "Viet Kieu" also shows the publisher's interest in domestic users. In addition,
+                                        the above work also increases the diversity in music selection for users.
+                                    </li>
+                                    <li style="margin-top: 2px;">
+                                        Magic Tiles 3 has a way of dividing music into music tiles similar to Beatstar.
+                                        Each track is divided into music tiles that move across the screen according to
+                                        a certain rule. In my experience, each tile corresponds to a note, a small part
+                                        of the music, or a word that the singer sings in the song.
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </table>
+                    <table style="margin-top: 10px;">
+                        <tr style="vertical-align: top;">
+                            <td style="width: 80%; padding-right: 20px;" data-aos="fade-right">
+                                <ul>
+                                    <li>
+                                        Magic Tiles 3 Moves music tiles according to the beat of the song similar to the
+                                        Beatstar game. Moving the music brick across the screen is synchronized with the
+                                        rhythm of the music. Players need to tap or hold on the boxes containing the
+                                        music tiles at the right time to create the correct sound and keep in tune with
+                                        the beat. The creativity that makes Magic Tiles 3 different from Beatstar is
+                                        pressing and moving along the zigzag lines, the zigzag lines appear when the
+                                        song falls into the singer's long humming (according to my experience).
+                                    </li>
+                                </ul>
+                            </td>
+                            <td style="width: 20%;">
+                                <div style="height: 100%;">
+                                    <img style="width: 100%; height: 100%; object-fit: contain; border-radius: 25px; border: #38C68B 5px solid;"
+                                        src="resources/screen-2.jpg" alt="">
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    <!-- motivation ========================================================================= -->
+                    <!-- ==================================================================================== -->
+                    <!-- ==================================================================================== -->
+                    <div style="font-weight: 800; font-size: 25px; color: rgb(255, 0, 128); margin-top: 10px;">
+                        3. What is the motivation that keeps players playing & coming back in these games? Explain
+                        how the game creates that motivation with its systems & design.
+                    </div>
+
+                    <div style="font-weight: 600; margin-top: 10px;">
+                        This is the 2nd game I have tried. Based on personal experience, I have drawn the following
+                        conclusions about what motivates players to continue playing the game:
+                    </div>
+
+                    <div id="motivation1">
+                        <div onclick="open_motiovation_1()" class="motivation">
+                            <i class="fa fa-arrow-circle-o-right" aria-hidden="true"></i> First motivation (click
+                            me)
+                        </div>
+                    </div>
+                    <div id="openmotivation1"></div>
+
+
+
+                    <div id="motivation2">
+                        <div onclick="open_motiovation_2()" class="motivation">
+                            <i class="fa fa-arrow-circle-o-right" aria-hidden="true"></i> Second motivation (click
+                            me)
+                        </div>
+                    </div>
+                    <div id="openmotivation2"></div>
+
+
+
+
+                    <div id="motivation3">
+                        <div onclick="open_motiovation_3()" class="motivation">
+                            <i class="fa fa-arrow-circle-o-right" aria-hidden="true"></i> Third motivation (click
+                            me)
+                        </div>
+                    </div>
+                    <div id="openmotivation3"></div>
+
+
+
+
+                    <div id="motivation4">
+                        <div onclick="open_motiovation_4()" class="motivation">
+                            <i class="fa fa-arrow-circle-o-right" aria-hidden="true"></i> Fourth motivation (click
+                            me)
+                        </div>
+                    </div>
+                    <div id="openmotivation4"></div>
+
+
+
+
+                    <div id="motivation5">
+                        <div onclick="open_motiovation_5()" class="motivation">
+                            <i class="fa fa-arrow-circle-o-right" aria-hidden="true"></i> Fifth motivation (click
+                            me)
+                        </div>
+                    </div>
+                    <div id="openmotivation5"></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    <!-- aesthetic ========================================================================== -->
+                    <!-- ==================================================================================== -->
+                    <!-- ==================================================================================== -->
+                    <div style="font-weight: 800; font-size: 25px; color: rgb(255, 0, 128); margin-top: 10px;">
+                        4. Describe the style and aesthetic of the game. Explain how the game achieves that aesthetic
+                        through its design, art, and audio.
+                    </div>
+                    <div style="font-weight: 600; margin-top: 10px;">
+                        As for style, the Magic Tiles 3 gameplay screen also has a simple and minimalist design style,
+                        focusing mainly on music tiles moving on the screen similar to Beatstar. The user interface is
+                        designed to make the game intuitive and easy to use. In terms of aesthetics, music tiles, and
+                        motion effects create a colorful and lively screen. The player's vision is stimulated through
+                        the blend of music tiles, paths, and outstanding effects.
+                    </div>
+                    <div style="font-weight: 600; margin-top: 10px;">
+                        Players need to tap on the boxes to press exactly to the beat and hold in time with the music.
+                        Accuracy and synchronization with the beat are how players immerse themselves in the music and
+                        complete the song. The sound of musical notes is combined with the smooth movement of music
+                        tiles, creating a harmonious musical and visual experience. Sound effects combined with images
+                        enhance the player's aesthetic experience.
+                    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    <!-- improve ============================================================================ -->
+                    <!-- ==================================================================================== -->
+                    <!-- ==================================================================================== -->
+                    <div style="font-weight: 800; font-size: 25px; color: rgb(255, 0, 128); margin-top: 10px;">
+                        5. Propose briefly 1 critical point you want to improve.
+                    </div>
+                    <div style="margin-top: 10px;">
+                        <Strong>Briefly:</Strong> Sometimes the game lags and needs to be improved.
+                    </div>
+                    <div style="margin-top: 10px;">
+                        <Strong>Details:</Strong> Magic Tile 3 is a game that requires high observation, reflexes, and
+                        speed. Lag can cause a bad user experience. During testing, with the test device being the
+                        iPhone The above situation should be optimized in case people who love and are serious about the
+                        game (loyal fans) turn away from the game.
+                    </div>
+
+
+
+
+                    <!-- next button ======================================================================== -->
+                    <!-- ==================================================================================== -->
+                    <!-- ==================================================================================== -->
+                    <div style="width: 100%; display: flex; justify-content: right; margin-top: 10px;">
+                        <button id="nextgame" class="button">
+                            Next game (Friday Night Funky') <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                        </button>
+                    </div>
+
+
+                </div>
+
+            </div>
+        </div>
+
+        <!-- bground -->
+        <div style="position: fixed; top: 0; left: 0; width: 100%; height: 100vh; z-index: -1;">
+            <div style="position: relative; width: 100%; height: 100%;">
+                <div style="background-color: rgba(0, 0, 0, 0.644); width: 100%; height: 100%; position: absolute;">
+                </div>
+                <img style="width: 100%; height: 100%; object-fit: cover;"
+                    src="resources/56433c06638810cd47b086c15b7dc020.gif" alt="">
+            </div>
+        </div>
+
+    </div>
+
+
+
+    <script>
+        function open_motiovation_1() {
+            var motivation1 = document.getElementById("motivation1");
+            var openmotivation1 = document.getElementById("openmotivation1");
+
+            motivation1.innerHTML = `<div style="width: 100%; border-radius: 10px; border: rgb(255, 0, 128) 2px solid; padding: 5px 10px; font-size: 20px; color: rgb(231, 231, 231); font-weight: 600; background-color: rgb(255, 0, 128);">
+                                        <i class="fa fa-arrow-circle-o-down" aria-hidden="true"></i> First motivation (click me)
+                                    </div>`;
+
+            openmotivation1.innerHTML = `<div style="width: 100%; padding: 0px 10px 10px 10px;" data-aos="fade-down">
+                Magic Tiles 3 is inspired by continuously increasing challenge and difficulty. Beatstar's design system has increasing levels of difficulty by increasing the speed of the song over time. This creates a continuous and challenging experience, encouraging players to try to improve their skills to overcome new levels.
+                    </div>`;
+        }
+
+
+        function open_motiovation_2() {
+            var motivation2 = document.getElementById("motivation2");
+            var openmotivation2 = document.getElementById("openmotivation2");
+
+            motivation2.innerHTML = `<div style="width: 100%; border-radius: 10px; border: rgb(255, 0, 128) 2px solid; padding: 5px 10px; font-size: 20px; color: rgb(231, 231, 231); font-weight: 600; background-color: rgb(255, 0, 128);">
+                                        <i class="fa fa-arrow-circle-o-down" aria-hidden="true"></i> Second motivation (click me)
+                                    </div>`;
+
+            openmotivation2.innerHTML = `<div style="width: 100%; padding: 0px 10px 10px 10px;" data-aos="fade-down">
+                Magic Tiles 3 also attracts players through a Score and Ranking System similar to Beatstar. Magic Tiles 3 has a score and ranking system where players can compare their performance with other players. This creates competition and motivates players to try to achieve higher scores and climb the leaderboards.
+                    </div>`;
+        }
+
+
+        function open_motiovation_3() {
+            var motivation3 = document.getElementById("motivation3");
+            var openmotivation3 = document.getElementById("openmotivation3");
+
+            motivation3.innerHTML = `<div style="width: 100%; border-radius: 10px; border: rgb(255, 0, 128) 2px solid; padding: 5px 10px; font-size: 20px; color: rgb(231, 231, 231); font-weight: 600; background-color: rgb(255, 0, 128);">
+                                        <i class="fa fa-arrow-circle-o-down" aria-hidden="true"></i> Third motivation (click me)
+                                    </div>`;
+
+            openmotivation3.innerHTML = `<div style="width: 100%; padding: 0px 10px 10px 10px;" data-aos="fade-down">
+                Magic Tiles 3 attracts players through Rewards and Experience Points. Magic Tiles 3 offers rewards by giving the player the right to unlock a favorite song when the player achieves 3 crowns in the previously played song. In addition, players can also watch ads to unlock music or can play without unlocking it if they are VIP members. This creates a positive incentive system, making the player want to continue to gain more rewards.
+                    </div>`;
+        }
+
+
+        function open_motiovation_4() {
+            var motivation4 = document.getElementById("motivation4");
+            var openmotivation4 = document.getElementById("openmotivation4");
+
+            motivation4.innerHTML = `<div style="width: 100%; border-radius: 10px; border: rgb(255, 0, 128) 2px solid; padding: 5px 10px; font-size: 20px; color: rgb(231, 231, 231); font-weight: 600; background-color: rgb(255, 0, 128);">
+                                        <i class="fa fa-arrow-circle-o-down" aria-hidden="true"></i> Fourth motivation (click me)
+                                    </div>`;
+
+            openmotivation4.innerHTML = `<div style="width: 100%; padding: 0px 10px 10px 10px;" data-aos="fade-down">
+                Magic Tiles 3 has Diversity in Content. Magic Tiles 3 has many tracks and arranges them at different difficulty levels (easy, medium, hard, extreme), creating diversity in content. Players can choose from a variety of music genres and new challenges, keeping the game fresh and exciting. 
+                    </div>`;
+        }
+
+
+        function open_motiovation_5() {
+            var motivation5 = document.getElementById("motivation5");
+            var openmotivation5 = document.getElementById("openmotivation5");
+
+            motivation5.innerHTML = `<div style="width: 100%; border-radius: 10px; border: rgb(255, 0, 128) 2px solid; padding: 5px 10px; font-size: 20px; color: rgb(231, 231, 231); font-weight: 600; background-color: rgb(255, 0, 128);">
+                                        <i class="fa fa-arrow-circle-o-down" aria-hidden="true"></i> Fifth motivation (click me)
+                                    </div>`;
+
+            openmotivation5.innerHTML = `<div style="width: 100%; padding: 0px 10px 10px 10px;" data-aos="fade-down">
+                Instead of reaching users through familiar music applications UI like Beatstar, Magic Tiles 3 has its own path. Magic Tiles 3's user interface is designed to be minimalist but still ensures aesthetics. Creating a simple-to-use interface helps players easily participate in the game, learn how to play and actively participate in different activities. The use of oil painting's effects on the artist's image also enhances the artistry in the application.
+                    </div>`;
+        }
+    </script>
+
+
+
+
+    <script>
+        var button_hover_audio = document.getElementById("button_hover");
+        var button_click_audio = document.getElementById("button_click");
+        // button_hover_audio.play();
+        const button = document.querySelectorAll('.button');
+        button.forEach((button) => {
+            button.addEventListener('mouseover', () => {
+                button_hover_audio.play();
+            })
+        });
+
+        document.getElementById("nextgame").onclick = function () {
+            button_click_audio.play();
+            fadeIn();
+            setTimeout(function () {
+                // Replace 'newPage.html' with the URL of the page you want to redirect to
+                window.location.href = 'friday-night-funky.html';
+            }, 1000);
+        }
+
+        function fadeIn() {
+            loading.style.display = "flex";
+            loading.style.opacity = 1;
+        }
+
+    </script>
+
+
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // Get the element to fade
+            var loading = document.getElementById("loading");
+
+            // Set the initial opacity
+            loading.style.opacity = 1;
+
+            // Function to fade the element to transparent
+            function fadeOutAndHide() {
+                loading.style.opacity = 0;
+
+                // Set display to "none" after the fading animation is complete
+                setTimeout(function () {
+                    loading.style.display = "none";
+                }, 1000); // 1000 milliseconds is the duration of the fade animation
+            }
+
+
+
+
+            // Call the fadeOutAndHide function after a delay (e.g., 3 seconds)
+            setTimeout(fadeOutAndHide, 3000);
+        });
+    </script>
+
+
+    <!-- animation -->
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+
+
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

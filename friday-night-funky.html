@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎵🎵🎵</title>
+    <link rel="icon" href="resources/moonware-logo-removebg-preview2.png">
+
+    <!-- fading animation -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
+
+    <!-- icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+
+    <!-- prevent right click -->
+    <script>
+        document.addEventListener('contextmenu', function (e) {
+            e.preventDefault();
+        });
+    </script>
+
+
+
+
+
+
+    <!-- prevent user press f12 -->
+    <script>
+        document.onkeydown = function (e) {
+            if (e.key === 'F12' || e.keyCode === 123) {
+                e.preventDefault();
+            }
+        };
+    </script>
+
+
+
+
+
+
+    <!-- prevent user press ctrl + u -->
+    <script>
+        document.addEventListener('keydown', function (e) {
+            if (e.ctrlKey && (e.key === 'u' || e.key === 'U')) {
+                e.preventDefault();
+            }
+        });
+    </script>
+
+
+
+
+
+
+    <!-- prevent user press ctrl + s -->
+    <script>
+        document.addEventListener('keydown', function (e) {
+            if (e.ctrlKey && (e.key === 's' || e.key === 'S')) {
+                e.preventDefault();
+            }
+        });
+    </script>
+
+
+    <style>
+        .button {
+            font-size: 20px;
+            border: 5px;
+            padding: 0px 20px;
+            background-color: rgb(231, 231, 231);
+            border: rgb(255, 0, 128) solid 2px;
+            border-radius: 25px;
+            color: rgb(255, 0, 128);
+            font-weight: 600;
+            margin: 5px 0px;
+            transition: background-color 0.5s ease;
+            transition: color 0.5s ease;
+        }
+
+        .button:hover {
+            font-size: 20px;
+            border: 5px;
+            padding: 0px 20px;
+            background-color: rgb(255, 0, 128);
+            border: rgb(255, 0, 128) solid 2px;
+            border-radius: 25px;
+            color: rgb(231, 231, 231);
+            font-weight: 600;
+            margin: 5px 0px;
+        }
+
+
+        .motivation {
+            margin-top: 5px;
+            width: 100%;
+            border-radius: 10px;
+            border: rgb(255, 0, 128) 2px solid;
+            padding: 5px 10px;
+            font-size: 20px;
+            color: rgb(255, 0, 128);
+            font-weight: 600;
+            background-color: rgb(231, 231, 231);
+            transition: background-color 0.5s ease;
+            transition: color 0.5s ease;
+        }
+
+        .motivation:hover {
+            margin-top: 5px;
+            width: 100%;
+            border-radius: 10px;
+            border: rgb(255, 0, 128) 2px solid;
+            padding: 5px 10px;
+            font-size: 20px;
+            color: rgb(231, 231, 231);
+            font-weight: 600;
+            background-color: rgb(255, 0, 128);
+        }
+    </style>
+</head>
+
+<body style="position: relative;">
+
+
+    <audio id="button_hover">
+        <source src="audio/button-hover.mp3">
+        </source>
+    </audio>
+
+    <audio id="button_click">
+        <source src="audio/button_clicked.mp3">
+        </source>
+    </audio>
+
+
+
+    <!-- loading -->
+    <div id="loading"
+        style="width: 100%; height: 100vh; display: flex; justify-content: center; align-items: center; background-color: rgb(231, 231, 231); position: fixed; z-index: 5; transition: opacity 1s ease;">
+        <div>
+            <img style="width: 200px;" src="resources/cosplay fnf.gif" alt="">
+            <div style="text-align: center; padding-top: 20px; font-size: 30px; font-weight: 700;">
+                LOADING
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+    <!-- main part -->
+    <div>
+        <!-- head bar -->
+        <div
+            style="width: 100%; height: 50px; background-image: linear-gradient(to right, rgb(255, 0, 128) , rgb(29, 185, 94));; display: flex; justify-content: center; align-items: center; position: fixed; top: 0; z-index: 6;">
+            <div style="height: fit-content; ">
+                <table>
+                    <tr>
+                        <td><img style="height: 40px;" src="resources/moonware-logo-removebg-preview.png" alt=""></td>
+                        <td
+                            style="font-size: 40px; font-weight: 700; padding: 0px 40px; color: white; text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;">
+                            X</td>
+                        <td><img style="height: 35px;"
+                                src="resources/Amanotes_logo@2x.ed37484ecb917cb64c2586fbfdc6ab584918f1f7.png" alt="">
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <!-- content -->
+        <div
+            style="width: 100%; height: fit-content; padding: 60px 0px; display: flex; justify-content: center; overflow: hidden;">
+            <div
+                style="width: 800px; height: 100%; border: rgb(255, 0, 128) solid 5px; border-radius: 25px; background-color: rgb(231, 231, 231);">
+
+                <!-- page-1 -->
+                <div style="padding: 20px; width: 100%;">
+
+
+
+
+
+
+
+
+
+
+
+
+                    <!-- game play ========================================================================== -->
+                    <!-- ==================================================================================== -->
+                    <!-- ==================================================================================== -->
+                    <div style="font-weight: 800; font-size: 25px; color: rgb(255, 0, 128); margin-top: 10px;">
+                        1. Explain the core game mechanic of the game.
+                    </div>
+                    <div style="font-weight: 600; margin-top: 10px;">
+                        Friday Night Funkin''s core game mechanics focus on beats and music, with an additional element
+                        of the story. Here is my explanation of the core game mechanics:
+                    </div>
+                    <table style="margin-top: 10px;">
+                        <tr style="vertical-align: top;">
+                            <td style="width: 35%;">
+                                <div style="height: 100%;">
+                                    <img style="width: 100%; height: 100%; object-fit: contain;"
+                                        src="resources/The_Mom.gif" alt="">
+                                </div>
+                            </td>
+                            <td style="width: 65%; padding-left: 20px;">
+
+                                <ul>
+                                    <li>
+                                        The game is a dancing and singing music competition (kinda sounds like the
+                                        legendary game Audition), the player must press the corresponding keys when the
+                                        icons appear on the screen. The arrow icon will move from the bottom to the top
+                                        of the screen, and the player needs to press the corresponding keys at the right
+                                        time to defeat the opponent.
+                                    </li>
+                                    <li style="margin-top: 2px;">
+                                        Players must participate in rhythm battles with different characters, each
+                                        character representing a different tune or genre of music. Each match consists
+                                        of multiple rounds (maximum 3 rounds and minimum 2 rounds), each round
+                                        represents a part of the track and the difficulty increases gradually.
+                                    </li>
+                                    <li style="margin-top: 2px;">
+                                        The gameplay of Friday Night Funkin’ comes with a simple but interesting
+                                        storyline. Players follow the story of Boyfriend and Girlfriend on their journey
+                                        to win Girlfriend's heart. The different characters have unique views and
+                                        personalities, combined with the original music selected during the selection
+                                        process to enhance that character's unique personality.
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </table>
+                    <table style="margin-top: 10px;">
+                        <tr style="vertical-align: bottom;">
+                            <td style="width: 65%; padding-left: 20px;">
+
+                                <ul>
+                                    <li>
+                                        Difficulty levels will increase over time or each round, creating a challenge
+                                        for players and encouraging them to improve their keystroke skills. The
+                                        opponents in the game have different difficulty levels, from easy to difficult,
+                                        to suit many different players.
+                                    </li>
+                                    <li style="margin-top: 2px;">
+                                        Much of the game's appeal comes from the music and @evilsk8r's drawing style,
+                                        which I attribute to graffiti. The music tracks are carefully selected and
+                                        highlight the style of each character and creation. @evilsk8r's unique art and
+                                        drawing style has created an impressive and unique visual style for players.
+                                    </li>
+                                    <li style="margin-top: 2px;">
+                                        Besides the above creative drawing style, the game also has @DitchuArt's pixel
+                                        art style in a special level (Boyfriend character confronts Senpai character in
+                                        week 6). The existence of many art styles in the game creates a diversity of
+                                        perspectives for players (a typical example of using multiple art styles can be
+                                        mentioned in the game Sally Face with the scene of Sally Face in the
+                                        multiverse). Unique pixel art creates a nostalgic and familiar visual style for
+                                        players.
+                                    </li>
+                                </ul>
+                            </td>
+                            <td style="width: 35%;">
+                                <div style="height: 100%;">
+                                    <img style="width: 100%; height: 100%; object-fit: contain;"
+                                        src="resources/cosplay fnf.gif" alt="">
+                                </div>
+                            </td>
+
+                        </tr>
+                    </table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    <!-- music use ========================================================================== -->
+                    <!-- ==================================================================================== -->
+                    <!-- ==================================================================================== -->
+                    <div style="font-weight: 800; font-size: 25px; color: rgb(255, 0, 128); margin-top: 10px;">
+                        2. Explain and compare how music is integrated with the gameplay of the game.
+                    </div>
+
+                    <div>
+                        <center>
+                            <img style="width: 300px; border-radius: 25px; border: #38C68B 5px solid;"
+                                src="resources/fnf.gif" alt="">
+                        </center>
+                    </div>
+
+                    <div style="font-weight: 600; margin-top: 10px;">
+                        Friday Night Funkin''s integration of music into the gameplay demonstrates precision and
+                        creativity, creating a unique and engaging musical experience. Below is my take on Friday Night
+                        Funkin''s approach to integrating music into the game's gameplay:
+                    </div>
+                    <table style="margin-top: 10px;">
+                        <tr style="vertical-align: top;">
+                            <td style="width: 80%; padding-right: 20px;" data-aos="fade-right">
+                                <ul>
+                                    <li>
+                                        The music of each stage is divided into small parts (ranging from 2 to 3 parts)
+                                        corresponding to each beat in the game. Each small part represents a specific
+                                        melody, and the player must interact with each of these parts by pressing and
+                                        holding the correct symbol on the keyboard (4 arrows on the key) during play.
+                                    </li>
+                                    <li style="margin-top: 2px;">
+                                        During gameplay, the player needs to identify the icon moving up from the bottom
+                                        of the screen and determine the appropriate character to press or hold. Players
+                                        feel sounds corresponding to their every move, creating synchronization between
+                                        gameplay and music.
+                                    </li>
+                                </ul>
+                            </td>
+                            <td style="width: 20%;">
+                                <div style="height: 100%;">
+                                    <img style="width: 100%; height: 100%; object-fit: contain; border-radius: 25px; border: #38C68B 5px solid;"
+                                        src="resources/fnf_fanart_by_jaredsteeletype_demiryr-pre.jpg" alt="">
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                    <ul>
+                        <li style="margin-top: 2px;">
+                            Dynamic sound effects are used to create precise and exciting reactions as
+                            players perform well-timed actions. During the gameplay, I realized that the
+                            game's dynamic sound is applied to the player's pressing of the correct or
+                            incorrect characters. If the letter is pressed correctly, the sound produced
+                            will be perfect and create a complete piece of music. On the contrary, if the
+                            sound is received incorrectly, a low note will be heard, signaling to the player
+                            that they are out of tune with the song.
+                        </li>
+                    </ul>
+                    <table style="margin-top: 10px;">
+                        <tr style="vertical-align: top;">
+                            <td style="width: 20%;">
+                                <div style="height: 100%;">
+                                    <img style="width: 100%; height: 100%; object-fit: contain; border-radius: 25px; border: #38C68B 5px solid;"
+                                        src="resources/tumblr_adf756654b2750d520d6420bfe9eb0ee_443ffebc_1280.gif"
+                                        alt="">
+                                </div>
+                            </td>
+                            <td style="width: 80%; padding-left: 20px;" data-aos="fade-left">
+                                <ul>
+                                    <li>
+                                        The beat of the music requires the player to closely synchronize with the
+                                        movements and beats in the game. The game's difficulty increases with the
+                                        complexity of the music, creating a constant challenge. These challenges will
+                                        stimulate players' interest.
+                                    </li>
+                                    <li>
+                                        Friday Night Funkin''s variety of music and characters contribute to a rich and
+                                        enjoyable musical experience. Each character has a unique music and style,
+                                        contributing to helping players feel a diverse experience and creativity in
+                                        music.
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    <!-- motivation ========================================================================= -->
+                    <!-- ==================================================================================== -->
+                    <!-- ==================================================================================== -->
+                    <div style="font-weight: 800; font-size: 25px; color: rgb(255, 0, 128); margin-top: 10px;">
+                        3. What is the motivation that keeps players playing & coming back in these games? Explain
+                        how the game creates that motivation with its systems & design.
+                    </div>
+
+
+                    <div style="font-weight: 600; margin-top: 10px;">
+                        Friday Night Funkin' is the third game I've tried. The gameplay is similar to Beatstar and Magic
+                        Tiles 3, but the appearance of specific characters along with the plot construction has made a
+                        big impression on an indie game maker specializing in plot and character design like me. The
+                        following is the motivation that the game creates for players based on my personal opinion:
+                    </div>
+
+
+
+                    <div id="motivation1">
+                        <div onclick="open_motiovation_1()" class="motivation">
+                            <i class="fa fa-arrow-circle-o-right" aria-hidden="true"></i> First motivation (click
+                            me)
+                        </div>
+                    </div>
+                    <div id="openmotivation1"></div>
+
+
+
+                    <div id="motivation2">
+                        <div onclick="open_motiovation_2()" class="motivation">
+                            <i class="fa fa-arrow-circle-o-right" aria-hidden="true"></i> Second motivation (click
+                            me)
+                        </div>
+                    </div>
+                    <div id="openmotivation2"></div>
+
+
+
+
+                    <div id="motivation3">
+                        <div onclick="open_motiovation_3()" class="motivation">
+                            <i class="fa fa-arrow-circle-o-right" aria-hidden="true"></i> Third motivation (click
+                            me)
+                        </div>
+                    </div>
+                    <div id="openmotivation3"></div>
+
+
+
+
+                    <div id="motivation4">
+                        <div onclick="open_motiovation_4()" class="motivation">
+                            <i class="fa fa-arrow-circle-o-right" aria-hidden="true"></i> Fourth motivation (click
+                            me)
+                        </div>
+                    </div>
+                    <div id="openmotivation4"></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    <!-- aesthetic ========================================================================== -->
+                    <!-- ==================================================================================== -->
+                    <!-- ==================================================================================== -->
+                    <div style="font-weight: 800; font-size: 25px; color: rgb(255, 0, 128); margin-top: 10px;">
+                        4. Describe the style and aesthetic of the game. Explain how the game achieves that aesthetic
+                        through its design, art, and audio.
+                    </div>
+                    <div style="font-weight: 600; margin-top: 10px;">
+                        Friday Night Funkin' with @evilsk8r's graffiti style has created a unique and outstanding image.
+                        This creates a visual style with a creative street style that makes the game more suitable when
+                        it can remind players of fierce street rap battles. Each character has a unique design with
+                        their own personality and style, accompanied by unique music that reflects their personality.
+                        The game interface is designed to be easy to see and understand, with simple but impressive
+                        icons and effects.
+                    </div>
+                    <div style="font-weight: 600; margin-top: 10px;">
+                        Friday Night Funkin''s music is diverse and creative, covering many music genres such as pop,
+                        rap, funk, and EDM. The soundtrack is tightly integrated with the gameplay, creating a unique
+                        musical and rhythmic experience. Dynamic sound effects are integrated as players make well-timed
+                        movements, enhancing the audio experience and creating harmony with the visuals. Images and
+                        music are closely synchronized, increasing aesthetics and providing a harmonious experience.
+                    </div>
+                    <div style="font-weight: 600; margin-top: 10px;">
+                        The gameplay mechanics of Friday Night Funkin' focus on rhythm gameplay, where the player needs
+                        to press the keys to the beat of the music. Accuracy and synchronization with the beat are the
+                        keys to passing levels. The character animations in the game are designed and executed smoothly,
+                        with flexible motion effects, creating an engaging and beautiful experience. Each opponent has a
+                        unique stage with matching visuals and music, adding variety and aesthetics to the game.
+                    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    <!-- improve ============================================================================ -->
+                    <!-- ==================================================================================== -->
+                    <!-- ==================================================================================== -->
+                    <div style="font-weight: 800; font-size: 25px; color: rgb(255, 0, 128); margin-top: 10px;">
+                        5. Propose briefly 1 critical point you want to improve.
+                    </div>
+                    <div style="margin-top: 10px;">
+                        <Strong>Briefly:</Strong> The game should develop a fighting mode between players or teams. You
+                        can consider adding the ability to customize the character according to the player's wishes.
+                    </div>
+                    <div style="margin-top: 10px;">
+                        <Strong>Details:</Strong> It is impossible to deny the attraction of the contrast in the game as
+                        I mentioned quite a lot before. However, competition in games is the current trend. Gamers don't
+                        just need a game with beautiful graphics or an engaging storyline, what they need is interaction
+                        with the community. Creating a competitive environment among gamers will be a source of
+                        motivation to continue playing the game and finding one's place in it. Some examples include
+                        “Faker” and the inspiration for League of Legends gamers, “Let me solo her” and the inspiration
+                        for Eldenring gamers.
+                    </div>
+                    <div style="margin-top: 10px;">
+                        The ability to customize their own character allows players to create their own personality. For
+                        players who love beauty and creative freedom, it will be a great source of motivation to
+                        continue participating in the game. We can mention examples of big games that are creative in
+                        character design such as Minecraft and Roblox.
+                    </div>
+
+
+
+
+                    <!-- next button ======================================================================== -->
+                    <!-- ==================================================================================== -->
+                    <!-- ==================================================================================== -->
+                    <div style="width: 100%; display: flex; justify-content: right; margin-top: 10px;">
+                        <button id="nextgame" class="button">
+                            Next game (Duet Cats) <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                        </button>
+                    </div>
+
+
+                </div>
+
+            </div>
+        </div>
+
+        <!-- bground -->
+        <div style="position: fixed; top: 0; left: 0; width: 100%; height: 100vh; z-index: -1;">
+            <div style="position: relative; width: 100%; height: 100%;">
+                <div style="background-color: rgba(0, 0, 0, 0.644); width: 100%; height: 100%; position: absolute;">
+                </div>
+                <img style="width: 100%; height: 100%; object-fit: cover;"
+                    src="resources/56433c06638810cd47b086c15b7dc020.gif" alt="">
+            </div>
+        </div>
+
+    </div>
+
+
+
+    <script>
+        function open_motiovation_1() {
+            var motivation1 = document.getElementById("motivation1");
+            var openmotivation1 = document.getElementById("openmotivation1");
+
+            motivation1.innerHTML = `<div style="width: 100%; border-radius: 10px; border: rgb(255, 0, 128) 2px solid; padding: 5px 10px; font-size: 20px; color: rgb(231, 231, 231); font-weight: 600; background-color: rgb(255, 0, 128);">
+                                        <i class="fa fa-arrow-circle-o-down" aria-hidden="true"></i> First motivation (click me)
+                                    </div>`;
+
+            openmotivation1.innerHTML = `<div style="width: 100%; padding: 0px 10px 10px 10px;" data-aos="fade-down">
+                Similar to Beatstar and Magic Tiles 3, the game will still offer increasing levels of difficulty, from easy to difficult, creating a constant challenge and encouraging improvement on the part of the player. The need to overcome challenges and achieve higher performance motivates players, especially when players feel they can improve their skills over time (this also applies in Fighting games can be mentioned as "Practicing line up in Valorant", "Practicing combos in League of Legends", etc).
+                    </div>`;
+        }
+
+
+        function open_motiovation_2() {
+            var motivation2 = document.getElementById("motivation2");
+            var openmotivation2 = document.getElementById("openmotivation2");
+
+            motivation2.innerHTML = `<div style="width: 100%; border-radius: 10px; border: rgb(255, 0, 128) 2px solid; padding: 5px 10px; font-size: 20px; color: rgb(231, 231, 231); font-weight: 600; background-color: rgb(255, 0, 128);">
+                                        <i class="fa fa-arrow-circle-o-down" aria-hidden="true"></i> Second motivation (click me)
+                                    </div>`;
+
+            openmotivation2.innerHTML = `<div style="width: 100%; padding: 0px 10px 10px 10px;" data-aos="fade-down">
+                The diversity in music, characters, and levels gives players a fresh and interesting perspective on Friday Night Funkin'. The anticipation of new content and creativity in the game keeps players engaged and creates continuous excitement (as evidenced by the comments urging the project to continue completion on the Twitter page of @PhantomArcade3K – Animator of Friday Night Funkin').
+                    </div>`;
+        }
+
+
+        function open_motiovation_3() {
+            var motivation3 = document.getElementById("motivation3");
+            var openmotivation3 = document.getElementById("openmotivation3");
+
+            motivation3.innerHTML = `<div style="width: 100%; border-radius: 10px; border: rgb(255, 0, 128) 2px solid; padding: 5px 10px; font-size: 20px; color: rgb(231, 231, 231); font-weight: 600; background-color: rgb(255, 0, 128);">
+                                        <i class="fa fa-arrow-circle-o-down" aria-hidden="true"></i> Third motivation (click me)
+                                    </div>`;
+
+            openmotivation3.innerHTML = `<div style="width: 100%; padding: 0px 10px 10px 10px;" data-aos="fade-down">
+                The plot is simple but engaging, along with characters with unique personalities and designs, creating a connection between the player and the game world. In an ever-growing gaming industry, it is undeniable that storylines have a relatively large impact on players' tastes (evidence can be seen through the plot construction of League of Legends and League of Legends, Valorant while those two games are simply online fighting games). The need to know more about the story and characters, as well as the desire to win to continue the plot, increases motivation.
+                    </div>`;
+        }
+
+
+        function open_motiovation_4() {
+            var motivation4 = document.getElementById("motivation4");
+            var openmotivation4 = document.getElementById("openmotivation4");
+
+            motivation4.innerHTML = `<div style="width: 100%; border-radius: 10px; border: rgb(255, 0, 128) 2px solid; padding: 5px 10px; font-size: 20px; color: rgb(231, 231, 231); font-weight: 600; background-color: rgb(255, 0, 128);">
+                                        <i class="fa fa-arrow-circle-o-down" aria-hidden="true"></i> Fourth motivation (click me)
+                                    </div>`;
+
+            openmotivation4.innerHTML = `<div style="width: 100%; padding: 0px 10px 10px 10px;" data-aos="fade-down">
+                The fast interactivity and precise feedback from Friday Night Funkin' make players feel in control and influence the outcome of the match. The interaction and immediate feedback help create a fun and challenging experience that stimulates players to stay engaged.
+                    </div>`;
+        }
+
+
+
+    </script>
+
+
+
+
+    <script>
+        var button_hover_audio = document.getElementById("button_hover");
+        var button_click_audio = document.getElementById("button_click");
+        // button_hover_audio.play();
+        const button = document.querySelectorAll('.button');
+        button.forEach((button) => {
+            button.addEventListener('mouseover', () => {
+                button_hover_audio.play();
+            })
+        });
+
+        document.getElementById("nextgame").onclick = function () {
+            button_click_audio.play();
+            fadeIn();
+            setTimeout(function () {
+                // Replace 'newPage.html' with the URL of the page you want to redirect to
+                window.location.href = 'duet-cats.html';
+            }, 1000);
+        }
+
+        function fadeIn() {
+            loading.style.display = "flex";
+            loading.style.opacity = 1;
+        }
+
+    </script>
+
+
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // Get the element to fade
+            var loading = document.getElementById("loading");
+
+            // Set the initial opacity
+            loading.style.opacity = 1;
+
+            // Function to fade the element to transparent
+            function fadeOutAndHide() {
+                loading.style.opacity = 0;
+
+                // Set display to "none" after the fading animation is complete
+                setTimeout(function () {
+                    loading.style.display = "none";
+                }, 1000); // 1000 milliseconds is the duration of the fade animation
+            }
+
+
+
+
+            // Call the fadeOutAndHide function after a delay (e.g., 3 seconds)
+            setTimeout(fadeOutAndHide, 3000);
+        });
+    </script>
+
+
+    <!-- animation -->
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+
+
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

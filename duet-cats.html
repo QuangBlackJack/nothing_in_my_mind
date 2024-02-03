@@ -123,6 +123,30 @@
             font-weight: 600;
             background-color: rgb(255, 0, 128);
         }
+
+
+        #xin_loi_anh_chiu_khong_noi {
+            width: 100%;
+            height: 100vh;
+            z-index: 4;
+            background-color: rgb(231, 231, 231);
+            display: none;
+            justify-content: center;
+            align-items: center;
+        }
+
+        @media screen and (max-width: 800px) {
+            #xin_loi_anh_chiu_khong_noi {
+                width: 100%;
+                height: 100vh;
+                padding: 10px;
+                z-index: 4;
+                background-color: rgb(231, 231, 231);
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+        }
     </style>
 </head>
 
@@ -154,7 +178,20 @@
 
 
 
-
+    <!-- sorry no suitable -->
+    <div id="xin_loi_anh_chiu_khong_noi">
+        <div>
+            <center>
+                <img style="width: 200px;" src="resources/source.gif" alt="">
+            </center>
+            <div style="text-align: center; padding-top: 20px; font-size: 30px; font-weight: 700;">
+                I'm very sorry to inform you that your screen size is not suitable for this feature
+            </div>
+            <div style="text-align: center; padding-top: 18px; font-size: 20px; font-weight: 400;">
+                Please use a device that has a screen size wider than 800px, thank you
+            </div>
+        </div>
+    </div>
 
 
 
